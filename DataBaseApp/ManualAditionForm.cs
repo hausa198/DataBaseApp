@@ -24,25 +24,6 @@ namespace DataBaseApp
             mainForm = mf;
         }
 
-        /*public void ShowTable(string dataBase,string table)
-        {
-            MySqlConnection conDataBase = new MySqlConnection(dataBase);
-            MySqlCommand cmdDataBase = new MySqlCommand($"Select *from {table} ", conDataBase);
-
-            MySqlDataAdapter sda = new MySqlDataAdapter();
-            sda.SelectCommand = cmdDataBase;
-                
-            DataTable dbTable = new DataTable();
-            sda.Fill(dbTable);
-
-            BindingSource bSource = new BindingSource();
-            bSource.DataSource = dbTable;
-
-            dataGridView1.AutoGenerateColumns = true;
-            dataGridView1.DataSource = bSource;
-
-            conDataBase.Close();
-        }*/
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
