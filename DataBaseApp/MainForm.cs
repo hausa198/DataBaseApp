@@ -19,9 +19,16 @@ namespace DataBaseApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ManualAditionForm mf = new ManualAditionForm(this);
+            ManualAditionForm maf = new ManualAditionForm(this);
             Hide();
-            mf.Show();
+            maf.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ManualDeletionForm mad = new ManualDeletionForm(this);
+            Hide();
+            mad.Show();
         }
     }
 }

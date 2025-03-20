@@ -107,6 +107,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(18, 49);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -778,6 +779,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(2278, 844);
             this.Controls.Add(this.btBack);
             this.Controls.Add(this.radioButton2);

@@ -68,7 +68,8 @@ namespace DataBaseApp
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if(radioButton1.Checked == true)
+            comboBox1.Enabled = true;
+            if (radioButton1.Checked == true)
             {
                 conDataBase1.Open();
                 MyDataBaseFunctions.ShowTable(MyDataBase, dataGridView1, "products");
@@ -85,7 +86,8 @@ namespace DataBaseApp
         }
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            if(radioButton2.Checked == true) 
+            comboBox1.Enabled = false;
+            if (radioButton2.Checked == true) 
             {
                 dataGridView1.DataSource = null;
                 this.dataGridView1.Rows.Clear();
