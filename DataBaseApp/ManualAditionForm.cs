@@ -17,10 +17,14 @@ namespace DataBaseApp
         private string MyDataBase { get; set; }
         private MainForm mainForm;
         DataBaseFunctions MyDataBaseFunctions = new DataBaseFunctions();
+        MySqlConnection conDataBase1 = new MySqlConnection();
+
+        private bool IsManuallyClosed = true;
         public ManualAditionForm(MainForm mf)
         {
             InitializeComponent();
             MyDataBase = "server=localhost;uid=root;pwd=1234;Database=electronics_company";
+            conDataBase1.ConnectionString = MyDataBase;
             mainForm = mf;
         }
 
@@ -64,36 +68,40 @@ namespace DataBaseApp
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            new MySqlConnection(MyDataBase).Open();
-            MyDataBaseFunctions.ShowTable(MyDataBase, dataGridView1, "products");
+            if(radioButton1.Checked == true)
+            {
+                conDataBase1.Open();
+                MyDataBaseFunctions.ShowTable(MyDataBase, dataGridView1, "products");
 
-            comboBox1.Items.Add("products");
-            comboBox1.Items.Add("customers");
-            comboBox1.Items.Add("orders");
-            comboBox1.Items.Add("suppliers");
-            comboBox1.SelectedItem = "products";
+                comboBox1.Items.Add("products");
+                comboBox1.Items.Add("customers");
+                comboBox1.Items.Add("orders");
+                comboBox1.Items.Add("suppliers");
+                comboBox1.SelectedItem = "products";
 
-            radioButton1.Enabled = false;
-            radioButton2.Enabled = true;
+                radioButton1.Enabled = false;
+                radioButton2.Enabled = true;
+            }
         }
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = null;
-            this.dataGridView1.Rows.Clear();
+            if(radioButton2.Checked == true) 
+            {
+                dataGridView1.DataSource = null;
+                this.dataGridView1.Rows.Clear();
 
-            comboBox1.SelectedIndex = -1;
-            comboBox1.Items.Clear();
+                comboBox1.SelectedIndex = -1;
+                comboBox1.Items.Clear();
 
-            new MySqlConnection(MyDataBase).Close();
+                conDataBase1.Close();
 
-            radioButton1.Enabled = true;
-            radioButton2.Enabled = false;
+                radioButton1.Enabled = true;
+                radioButton2.Enabled = false;
+            }
         }
 
         private void btRegistrationProducts_Click(object sender, EventArgs e)
         {
-            MySqlConnection conDataBase1 = new MySqlConnection(MyDataBase);
-            conDataBase1.Open();
             MySqlCommand cmdDataBase1 = new MySqlCommand("insert into products (Name,Category,Price,QuantityInStock,SupplierID) " +
                 "values(@Name,@Category,@Price,@QuantityInStock,@SupplierID)", conDataBase1);
 
@@ -104,7 +112,6 @@ namespace DataBaseApp
             cmdDataBase1.Parameters.AddWithValue("@SupplierID", (tb_products_SupplierID.Text));
 
             cmdDataBase1.ExecuteNonQuery();
-            conDataBase1.Close();
 
             MessageBox.Show("Добавихте Успешно!");
 
@@ -113,8 +120,6 @@ namespace DataBaseApp
 
         private void btRegistrationCustomers_Click(object sender, EventArgs e)
         {
-            MySqlConnection conDataBase1 = new MySqlConnection(MyDataBase);
-            conDataBase1.Open();
             MySqlCommand cmdDataBase1 = new MySqlCommand
                 ("insert into customers (FirstName,LastName,Phone,Email,Address) " +
                 "values(@FirstName,@LastName,@Phone,@Email,@Address)", conDataBase1);
@@ -126,7 +131,6 @@ namespace DataBaseApp
             cmdDataBase1.Parameters.AddWithValue("@Address", (tb_customers_Address.Text));
 
             cmdDataBase1.ExecuteNonQuery();
-            conDataBase1.Close();
 
             MessageBox.Show("Добавихте Успешно!");
 
@@ -135,8 +139,6 @@ namespace DataBaseApp
 
         private void btRegistrationOrders_Click(object sender, EventArgs e)
         {
-            MySqlConnection conDataBase1 = new MySqlConnection(MyDataBase);
-            conDataBase1.Open();
             MySqlCommand cmdDataBase1 = new MySqlCommand("insert into orders (CustomerID,ProductID,Quantity,OrderDate,Status) " +
                 "values(@CustomerID,@ProductID,@Quantity,@OrderDate,@Status)", conDataBase1);
 
@@ -147,7 +149,6 @@ namespace DataBaseApp
             cmdDataBase1.Parameters.AddWithValue("@Status", (cb_orders_Status.SelectedIndex + 1));
 
             cmdDataBase1.ExecuteNonQuery();
-            conDataBase1.Close();
 
             MessageBox.Show("Добавихте Успешно!");
 
@@ -156,8 +157,6 @@ namespace DataBaseApp
 
         private void btRegistrationSuppliers_Click(object sender, EventArgs e)
         {
-            MySqlConnection conDataBase1 = new MySqlConnection(MyDataBase);
-            conDataBase1.Open();
             MySqlCommand cmdDataBase1 = new MySqlCommand("insert into suppliers (Name,ContactEmail,Phone) " +
                 "values(@Name,@ContactEmail,@Phone)", conDataBase1);
 
@@ -166,7 +165,6 @@ namespace DataBaseApp
             cmdDataBase1.Parameters.AddWithValue("@Phone", (tb_suppliers_Phone.Text));
 
             cmdDataBase1.ExecuteNonQuery();
-            conDataBase1.Close();
 
             MessageBox.Show("Добавихте Успешно!");
 
@@ -180,18 +178,23 @@ namespace DataBaseApp
             tb_orders_OrderDate.Text = currentDateTime.ToString("yyyy-MM-dd HH:mm:ss");
         }
 
-        //TODO: fix memoryleak when going back and forth between forms
         private void btBack_Click(object sender, EventArgs e)
         {
+            IsManuallyClosed = false;
+            conDataBase1.Close();
             this.Close();
             mainForm.Show();
+            IsManuallyClosed = true;
         }
 
-        //TODO: fix event
-        private void ManualAditionForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void ManualAditionForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            new MySqlConnection(MyDataBase).Close();
-            mainForm.Close();
+            if(IsManuallyClosed == true)
+            {
+                conDataBase1.Close();
+                mainForm.Close();
+                IsManuallyClosed = false;
+            }
         }
     }
 }
