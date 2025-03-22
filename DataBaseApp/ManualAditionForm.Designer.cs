@@ -88,6 +88,14 @@
             this.tb_suppliers_Phone = new System.Windows.Forms.TextBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.btBack = new System.Windows.Forms.Button();
+            this.btRemoveProduct = new System.Windows.Forms.Button();
+            this.btRemoveCustomer = new System.Windows.Forms.Button();
+            this.btRemoveOrder = new System.Windows.Forms.Button();
+            this.btRemoveSupplier = new System.Windows.Forms.Button();
+            this.btFindProducts = new System.Windows.Forms.Button();
+            this.btFindCustomers = new System.Windows.Forms.Button();
+            this.btFindOrders = new System.Windows.Forms.Button();
+            this.btFindSuppliers = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbProducts.SuspendLayout();
             this.gbCustomers.SuspendLayout();
@@ -102,7 +110,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(999, 669);
+            this.dataGridView1.Size = new System.Drawing.Size(999, 828);
             this.dataGridView1.TabIndex = 0;
             // 
             // comboBox1
@@ -129,6 +137,8 @@
             // 
             // gbProducts
             // 
+            this.gbProducts.Controls.Add(this.btFindProducts);
+            this.gbProducts.Controls.Add(this.btRemoveProduct);
             this.gbProducts.Controls.Add(this.cb_products_Category);
             this.gbProducts.Controls.Add(this.btRegistrationProducts);
             this.gbProducts.Controls.Add(this.label4);
@@ -148,7 +158,7 @@
             this.gbProducts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbProducts.Name = "gbProducts";
             this.gbProducts.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbProducts.Size = new System.Drawing.Size(300, 668);
+            this.gbProducts.Size = new System.Drawing.Size(300, 827);
             this.gbProducts.TabIndex = 5;
             this.gbProducts.TabStop = false;
             this.gbProducts.Text = "products";
@@ -160,7 +170,7 @@
             "Desktop",
             "Laptop",
             "Server"});
-            this.cb_products_Category.Location = new System.Drawing.Point(9, 229);
+            this.cb_products_Category.Location = new System.Drawing.Point(14, 270);
             this.cb_products_Category.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cb_products_Category.Name = "cb_products_Category";
             this.cb_products_Category.Size = new System.Drawing.Size(148, 37);
@@ -168,10 +178,10 @@
             // 
             // btRegistrationProducts
             // 
-            this.btRegistrationProducts.Location = new System.Drawing.Point(9, 620);
+            this.btRegistrationProducts.Location = new System.Drawing.Point(8, 731);
             this.btRegistrationProducts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btRegistrationProducts.Name = "btRegistrationProducts";
-            this.btRegistrationProducts.Size = new System.Drawing.Size(150, 38);
+            this.btRegistrationProducts.Size = new System.Drawing.Size(148, 38);
             this.btRegistrationProducts.TabIndex = 6;
             this.btRegistrationProducts.Text = "Записване";
             this.btRegistrationProducts.UseVisualStyleBackColor = true;
@@ -181,7 +191,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(3, 194);
+            this.label4.Location = new System.Drawing.Point(8, 235);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 29);
@@ -192,7 +202,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(3, 357);
+            this.label6.Location = new System.Drawing.Point(8, 398);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(179, 29);
@@ -203,7 +213,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(3, 114);
+            this.label3.Location = new System.Drawing.Point(8, 155);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 29);
@@ -212,7 +222,7 @@
             // 
             // tb_products_Name
             // 
-            this.tb_products_Name.Location = new System.Drawing.Point(9, 149);
+            this.tb_products_Name.Location = new System.Drawing.Point(14, 190);
             this.tb_products_Name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_products_Name.Name = "tb_products_Name";
             this.tb_products_Name.Size = new System.Drawing.Size(274, 35);
@@ -221,7 +231,6 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Enabled = false;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(3, 34);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -232,7 +241,6 @@
             // 
             // tb_products_ProductID
             // 
-            this.tb_products_ProductID.Enabled = false;
             this.tb_products_ProductID.Location = new System.Drawing.Point(9, 69);
             this.tb_products_ProductID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_products_ProductID.Name = "tb_products_ProductID";
@@ -241,7 +249,7 @@
             // 
             // tb_products_QuantityInStock
             // 
-            this.tb_products_QuantityInStock.Location = new System.Drawing.Point(9, 392);
+            this.tb_products_QuantityInStock.Location = new System.Drawing.Point(14, 433);
             this.tb_products_QuantityInStock.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_products_QuantityInStock.Name = "tb_products_QuantityInStock";
             this.tb_products_QuantityInStock.Size = new System.Drawing.Size(274, 35);
@@ -251,7 +259,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(3, 437);
+            this.label7.Location = new System.Drawing.Point(8, 478);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(127, 29);
@@ -260,7 +268,7 @@
             // 
             // tb_products_SupplierID
             // 
-            this.tb_products_SupplierID.Location = new System.Drawing.Point(9, 472);
+            this.tb_products_SupplierID.Location = new System.Drawing.Point(14, 513);
             this.tb_products_SupplierID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_products_SupplierID.Name = "tb_products_SupplierID";
             this.tb_products_SupplierID.Size = new System.Drawing.Size(274, 35);
@@ -270,7 +278,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(3, 274);
+            this.label5.Location = new System.Drawing.Point(8, 315);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 29);
@@ -279,7 +287,7 @@
             // 
             // tb_products_Price
             // 
-            this.tb_products_Price.Location = new System.Drawing.Point(9, 309);
+            this.tb_products_Price.Location = new System.Drawing.Point(14, 350);
             this.tb_products_Price.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_products_Price.Name = "tb_products_Price";
             this.tb_products_Price.Size = new System.Drawing.Size(274, 35);
@@ -288,7 +296,6 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Enabled = false;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(3, 34);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -299,7 +306,6 @@
             // 
             // tb_customers_CustomerID
             // 
-            this.tb_customers_CustomerID.Enabled = false;
             this.tb_customers_CustomerID.Location = new System.Drawing.Point(9, 68);
             this.tb_customers_CustomerID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_customers_CustomerID.Name = "tb_customers_CustomerID";
@@ -308,6 +314,8 @@
             // 
             // gbCustomers
             // 
+            this.gbCustomers.Controls.Add(this.btFindCustomers);
+            this.gbCustomers.Controls.Add(this.btRemoveCustomer);
             this.gbCustomers.Controls.Add(this.btRegistrationCustomers);
             this.gbCustomers.Controls.Add(this.label8);
             this.gbCustomers.Controls.Add(this.label10);
@@ -327,14 +335,14 @@
             this.gbCustomers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbCustomers.Name = "gbCustomers";
             this.gbCustomers.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbCustomers.Size = new System.Drawing.Size(300, 666);
+            this.gbCustomers.Size = new System.Drawing.Size(300, 825);
             this.gbCustomers.TabIndex = 11;
             this.gbCustomers.TabStop = false;
             this.gbCustomers.Text = "customers";
             // 
             // btRegistrationCustomers
             // 
-            this.btRegistrationCustomers.Location = new System.Drawing.Point(9, 618);
+            this.btRegistrationCustomers.Location = new System.Drawing.Point(8, 729);
             this.btRegistrationCustomers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btRegistrationCustomers.Name = "btRegistrationCustomers";
             this.btRegistrationCustomers.Size = new System.Drawing.Size(150, 38);
@@ -347,7 +355,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(3, 192);
+            this.label10.Location = new System.Drawing.Point(3, 233);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(122, 29);
@@ -356,7 +364,7 @@
             // 
             // tb_customers_LastName
             // 
-            this.tb_customers_LastName.Location = new System.Drawing.Point(9, 228);
+            this.tb_customers_LastName.Location = new System.Drawing.Point(9, 269);
             this.tb_customers_LastName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_customers_LastName.Name = "tb_customers_LastName";
             this.tb_customers_LastName.Size = new System.Drawing.Size(274, 35);
@@ -366,7 +374,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(3, 435);
+            this.label13.Location = new System.Drawing.Point(3, 476);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(102, 29);
@@ -377,7 +385,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(3, 272);
+            this.label11.Location = new System.Drawing.Point(3, 313);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(74, 29);
@@ -386,7 +394,7 @@
             // 
             // tb_customers_Address
             // 
-            this.tb_customers_Address.Location = new System.Drawing.Point(9, 471);
+            this.tb_customers_Address.Location = new System.Drawing.Point(9, 512);
             this.tb_customers_Address.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_customers_Address.Name = "tb_customers_Address";
             this.tb_customers_Address.Size = new System.Drawing.Size(274, 35);
@@ -394,7 +402,7 @@
             // 
             // tb_customers_Email
             // 
-            this.tb_customers_Email.Location = new System.Drawing.Point(9, 308);
+            this.tb_customers_Email.Location = new System.Drawing.Point(9, 349);
             this.tb_customers_Email.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_customers_Email.Name = "tb_customers_Email";
             this.tb_customers_Email.Size = new System.Drawing.Size(274, 35);
@@ -404,7 +412,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(3, 112);
+            this.label9.Location = new System.Drawing.Point(3, 153);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(125, 29);
@@ -415,7 +423,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(3, 355);
+            this.label12.Location = new System.Drawing.Point(3, 396);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(83, 29);
@@ -424,7 +432,7 @@
             // 
             // tb_customers_FirstName
             // 
-            this.tb_customers_FirstName.Location = new System.Drawing.Point(9, 148);
+            this.tb_customers_FirstName.Location = new System.Drawing.Point(9, 189);
             this.tb_customers_FirstName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_customers_FirstName.Name = "tb_customers_FirstName";
             this.tb_customers_FirstName.Size = new System.Drawing.Size(274, 35);
@@ -432,7 +440,7 @@
             // 
             // tb_customers_Phone
             // 
-            this.tb_customers_Phone.Location = new System.Drawing.Point(9, 391);
+            this.tb_customers_Phone.Location = new System.Drawing.Point(9, 432);
             this.tb_customers_Phone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_customers_Phone.Name = "tb_customers_Phone";
             this.tb_customers_Phone.Size = new System.Drawing.Size(274, 35);
@@ -440,6 +448,8 @@
             // 
             // gbOrders
             // 
+            this.gbOrders.Controls.Add(this.btFindOrders);
+            this.gbOrders.Controls.Add(this.btRemoveOrder);
             this.gbOrders.Controls.Add(this.btGetCurrentTime);
             this.gbOrders.Controls.Add(this.label24);
             this.gbOrders.Controls.Add(this.cb_orders_Status);
@@ -461,7 +471,7 @@
             this.gbOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbOrders.Name = "gbOrders";
             this.gbOrders.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbOrders.Size = new System.Drawing.Size(300, 665);
+            this.gbOrders.Size = new System.Drawing.Size(300, 824);
             this.gbOrders.TabIndex = 11;
             this.gbOrders.TabStop = false;
             this.gbOrders.Text = "orders";
@@ -469,7 +479,7 @@
             // btGetCurrentTime
             // 
             this.btGetCurrentTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btGetCurrentTime.Location = new System.Drawing.Point(68, 469);
+            this.btGetCurrentTime.Location = new System.Drawing.Point(69, 510);
             this.btGetCurrentTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btGetCurrentTime.Name = "btGetCurrentTime";
             this.btGetCurrentTime.Size = new System.Drawing.Size(150, 55);
@@ -482,7 +492,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label24.Location = new System.Drawing.Point(45, 434);
+            this.label24.Location = new System.Drawing.Point(46, 475);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(206, 20);
@@ -497,7 +507,7 @@
             "In Progress",
             "Delivered",
             "Cancelled"});
-            this.cb_orders_Status.Location = new System.Drawing.Point(9, 565);
+            this.cb_orders_Status.Location = new System.Drawing.Point(10, 606);
             this.cb_orders_Status.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cb_orders_Status.Name = "cb_orders_Status";
             this.cb_orders_Status.Size = new System.Drawing.Size(148, 37);
@@ -507,7 +517,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label19.Location = new System.Drawing.Point(9, 529);
+            this.label19.Location = new System.Drawing.Point(10, 570);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(79, 29);
@@ -518,7 +528,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(3, 354);
+            this.label18.Location = new System.Drawing.Point(4, 395);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(126, 29);
@@ -527,7 +537,7 @@
             // 
             // tb_orders_OrderDate
             // 
-            this.tb_orders_OrderDate.Location = new System.Drawing.Point(9, 389);
+            this.tb_orders_OrderDate.Location = new System.Drawing.Point(10, 430);
             this.tb_orders_OrderDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_orders_OrderDate.Name = "tb_orders_OrderDate";
             this.tb_orders_OrderDate.Size = new System.Drawing.Size(274, 35);
@@ -537,7 +547,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(3, 271);
+            this.label17.Location = new System.Drawing.Point(4, 312);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(100, 29);
@@ -546,7 +556,7 @@
             // 
             // tb_orders_Quantity
             // 
-            this.tb_orders_Quantity.Location = new System.Drawing.Point(9, 306);
+            this.tb_orders_Quantity.Location = new System.Drawing.Point(10, 347);
             this.tb_orders_Quantity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_orders_Quantity.Name = "tb_orders_Quantity";
             this.tb_orders_Quantity.Size = new System.Drawing.Size(274, 35);
@@ -556,7 +566,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(3, 191);
+            this.label16.Location = new System.Drawing.Point(4, 232);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(119, 29);
@@ -565,7 +575,7 @@
             // 
             // tb_orders_ProductID
             // 
-            this.tb_orders_ProductID.Location = new System.Drawing.Point(9, 226);
+            this.tb_orders_ProductID.Location = new System.Drawing.Point(10, 267);
             this.tb_orders_ProductID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_orders_ProductID.Name = "tb_orders_ProductID";
             this.tb_orders_ProductID.Size = new System.Drawing.Size(274, 35);
@@ -575,7 +585,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.Location = new System.Drawing.Point(3, 111);
+            this.label15.Location = new System.Drawing.Point(4, 152);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(140, 29);
@@ -584,7 +594,7 @@
             // 
             // tb_orders_CustomerID
             // 
-            this.tb_orders_CustomerID.Location = new System.Drawing.Point(9, 146);
+            this.tb_orders_CustomerID.Location = new System.Drawing.Point(10, 187);
             this.tb_orders_CustomerID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_orders_CustomerID.Name = "tb_orders_CustomerID";
             this.tb_orders_CustomerID.Size = new System.Drawing.Size(274, 35);
@@ -593,7 +603,6 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Enabled = false;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.Location = new System.Drawing.Point(3, 31);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -604,7 +613,6 @@
             // 
             // tb_orders_OrderID
             // 
-            this.tb_orders_OrderID.Enabled = false;
             this.tb_orders_OrderID.Location = new System.Drawing.Point(9, 66);
             this.tb_orders_OrderID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_orders_OrderID.Name = "tb_orders_OrderID";
@@ -613,7 +621,7 @@
             // 
             // btRegistrationOrders
             // 
-            this.btRegistrationOrders.Location = new System.Drawing.Point(9, 617);
+            this.btRegistrationOrders.Location = new System.Drawing.Point(8, 728);
             this.btRegistrationOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btRegistrationOrders.Name = "btRegistrationOrders";
             this.btRegistrationOrders.Size = new System.Drawing.Size(150, 38);
@@ -624,7 +632,6 @@
             // 
             // tb_suppliers_SupplierID
             // 
-            this.tb_suppliers_SupplierID.Enabled = false;
             this.tb_suppliers_SupplierID.Location = new System.Drawing.Point(9, 66);
             this.tb_suppliers_SupplierID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_suppliers_SupplierID.Name = "tb_suppliers_SupplierID";
@@ -647,6 +654,8 @@
             // 
             // gbSuppliers
             // 
+            this.gbSuppliers.Controls.Add(this.btRemoveSupplier);
+            this.gbSuppliers.Controls.Add(this.btFindSuppliers);
             this.gbSuppliers.Controls.Add(this.label23);
             this.gbSuppliers.Controls.Add(this.btRegistrationSuppliers);
             this.gbSuppliers.Controls.Add(this.tb_suppliers_SupplierID);
@@ -662,7 +671,7 @@
             this.gbSuppliers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbSuppliers.Name = "gbSuppliers";
             this.gbSuppliers.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbSuppliers.Size = new System.Drawing.Size(300, 665);
+            this.gbSuppliers.Size = new System.Drawing.Size(300, 824);
             this.gbSuppliers.TabIndex = 17;
             this.gbSuppliers.TabStop = false;
             this.gbSuppliers.Text = "suppliers";
@@ -671,7 +680,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label23.Location = new System.Drawing.Point(3, 271);
+            this.label23.Location = new System.Drawing.Point(3, 309);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(83, 29);
@@ -680,7 +689,7 @@
             // 
             // btRegistrationSuppliers
             // 
-            this.btRegistrationSuppliers.Location = new System.Drawing.Point(9, 617);
+            this.btRegistrationSuppliers.Location = new System.Drawing.Point(8, 728);
             this.btRegistrationSuppliers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btRegistrationSuppliers.Name = "btRegistrationSuppliers";
             this.btRegistrationSuppliers.Size = new System.Drawing.Size(150, 38);
@@ -692,7 +701,6 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Enabled = false;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label20.Location = new System.Drawing.Point(3, 31);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -703,7 +711,7 @@
             // 
             // tb_suppliers_Name
             // 
-            this.tb_suppliers_Name.Location = new System.Drawing.Point(9, 146);
+            this.tb_suppliers_Name.Location = new System.Drawing.Point(9, 184);
             this.tb_suppliers_Name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_suppliers_Name.Name = "tb_suppliers_Name";
             this.tb_suppliers_Name.Size = new System.Drawing.Size(274, 35);
@@ -713,7 +721,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label21.Location = new System.Drawing.Point(3, 114);
+            this.label21.Location = new System.Drawing.Point(3, 152);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(78, 29);
@@ -724,7 +732,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label22.Location = new System.Drawing.Point(3, 191);
+            this.label22.Location = new System.Drawing.Point(3, 229);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(155, 29);
@@ -733,7 +741,7 @@
             // 
             // tb_suppliers_ContactEmail
             // 
-            this.tb_suppliers_ContactEmail.Location = new System.Drawing.Point(9, 226);
+            this.tb_suppliers_ContactEmail.Location = new System.Drawing.Point(9, 264);
             this.tb_suppliers_ContactEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_suppliers_ContactEmail.Name = "tb_suppliers_ContactEmail";
             this.tb_suppliers_ContactEmail.Size = new System.Drawing.Size(274, 35);
@@ -741,7 +749,7 @@
             // 
             // tb_suppliers_Phone
             // 
-            this.tb_suppliers_Phone.Location = new System.Drawing.Point(9, 306);
+            this.tb_suppliers_Phone.Location = new System.Drawing.Point(9, 344);
             this.tb_suppliers_Phone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_suppliers_Phone.Name = "tb_suppliers_Phone";
             this.tb_suppliers_Phone.Size = new System.Drawing.Size(274, 35);
@@ -766,7 +774,7 @@
             // 
             this.btBack.BackColor = System.Drawing.SystemColors.Control;
             this.btBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBack.Location = new System.Drawing.Point(18, 769);
+            this.btBack.Location = new System.Drawing.Point(13, 929);
             this.btBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btBack.Name = "btBack";
             this.btBack.Size = new System.Drawing.Size(150, 66);
@@ -775,12 +783,104 @@
             this.btBack.UseVisualStyleBackColor = false;
             this.btBack.Click += new System.EventHandler(this.btBack_Click);
             // 
+            // btRemoveProduct
+            // 
+            this.btRemoveProduct.Enabled = false;
+            this.btRemoveProduct.Location = new System.Drawing.Point(8, 779);
+            this.btRemoveProduct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btRemoveProduct.Name = "btRemoveProduct";
+            this.btRemoveProduct.Size = new System.Drawing.Size(150, 38);
+            this.btRemoveProduct.TabIndex = 32;
+            this.btRemoveProduct.Text = "Изтриване";
+            this.btRemoveProduct.UseVisualStyleBackColor = true;
+            this.btRemoveProduct.Click += new System.EventHandler(this.btRemoveProduct_Click);
+            // 
+            // btRemoveCustomer
+            // 
+            this.btRemoveCustomer.Enabled = false;
+            this.btRemoveCustomer.Location = new System.Drawing.Point(8, 777);
+            this.btRemoveCustomer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btRemoveCustomer.Name = "btRemoveCustomer";
+            this.btRemoveCustomer.Size = new System.Drawing.Size(150, 38);
+            this.btRemoveCustomer.TabIndex = 33;
+            this.btRemoveCustomer.Text = "Изтриване";
+            this.btRemoveCustomer.UseVisualStyleBackColor = true;
+            this.btRemoveCustomer.Click += new System.EventHandler(this.btRemoveCustomer_Click);
+            // 
+            // btRemoveOrder
+            // 
+            this.btRemoveOrder.Enabled = false;
+            this.btRemoveOrder.Location = new System.Drawing.Point(8, 776);
+            this.btRemoveOrder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btRemoveOrder.Name = "btRemoveOrder";
+            this.btRemoveOrder.Size = new System.Drawing.Size(150, 38);
+            this.btRemoveOrder.TabIndex = 34;
+            this.btRemoveOrder.Text = "Изтриване";
+            this.btRemoveOrder.UseVisualStyleBackColor = true;
+            this.btRemoveOrder.Click += new System.EventHandler(this.btRemoveOrder_Click);
+            // 
+            // btRemoveSupplier
+            // 
+            this.btRemoveSupplier.Enabled = false;
+            this.btRemoveSupplier.Location = new System.Drawing.Point(8, 776);
+            this.btRemoveSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btRemoveSupplier.Name = "btRemoveSupplier";
+            this.btRemoveSupplier.Size = new System.Drawing.Size(150, 38);
+            this.btRemoveSupplier.TabIndex = 35;
+            this.btRemoveSupplier.Text = "Изтриване";
+            this.btRemoveSupplier.UseVisualStyleBackColor = true;
+            this.btRemoveSupplier.Click += new System.EventHandler(this.btRemoveSupplier_Click);
+            // 
+            // btFindProducts
+            // 
+            this.btFindProducts.Location = new System.Drawing.Point(8, 112);
+            this.btFindProducts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btFindProducts.Name = "btFindProducts";
+            this.btFindProducts.Size = new System.Drawing.Size(150, 38);
+            this.btFindProducts.TabIndex = 35;
+            this.btFindProducts.Text = "Намери";
+            this.btFindProducts.UseVisualStyleBackColor = true;
+            this.btFindProducts.Click += new System.EventHandler(this.btFindProducts_Click);
+            // 
+            // btFindCustomers
+            // 
+            this.btFindCustomers.Location = new System.Drawing.Point(9, 110);
+            this.btFindCustomers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btFindCustomers.Name = "btFindCustomers";
+            this.btFindCustomers.Size = new System.Drawing.Size(150, 38);
+            this.btFindCustomers.TabIndex = 36;
+            this.btFindCustomers.Text = "Намери";
+            this.btFindCustomers.UseVisualStyleBackColor = true;
+            this.btFindCustomers.Click += new System.EventHandler(this.btFindCustomers_Click);
+            // 
+            // btFindOrders
+            // 
+            this.btFindOrders.Location = new System.Drawing.Point(8, 109);
+            this.btFindOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btFindOrders.Name = "btFindOrders";
+            this.btFindOrders.Size = new System.Drawing.Size(150, 38);
+            this.btFindOrders.TabIndex = 37;
+            this.btFindOrders.Text = "Намери";
+            this.btFindOrders.UseVisualStyleBackColor = true;
+            this.btFindOrders.Click += new System.EventHandler(this.btFindOrders_Click);
+            // 
+            // btFindSuppliers
+            // 
+            this.btFindSuppliers.Location = new System.Drawing.Point(9, 109);
+            this.btFindSuppliers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btFindSuppliers.Name = "btFindSuppliers";
+            this.btFindSuppliers.Size = new System.Drawing.Size(150, 38);
+            this.btFindSuppliers.TabIndex = 38;
+            this.btFindSuppliers.Text = "Намери";
+            this.btFindSuppliers.UseVisualStyleBackColor = true;
+            this.btFindSuppliers.Click += new System.EventHandler(this.btFindSuppliers_Click);
+            // 
             // ManualAditionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(2278, 844);
+            this.ClientSize = new System.Drawing.Size(2278, 1009);
             this.Controls.Add(this.btBack);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.gbSuppliers);
@@ -872,6 +972,14 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button btGetCurrentTime;
         private System.Windows.Forms.Button btBack;
+        private System.Windows.Forms.Button btRemoveProduct;
+        private System.Windows.Forms.Button btRemoveCustomer;
+        private System.Windows.Forms.Button btRemoveOrder;
+        private System.Windows.Forms.Button btRemoveSupplier;
+        private System.Windows.Forms.Button btFindProducts;
+        private System.Windows.Forms.Button btFindCustomers;
+        private System.Windows.Forms.Button btFindOrders;
+        private System.Windows.Forms.Button btFindSuppliers;
     }
 }
 
