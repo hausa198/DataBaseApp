@@ -16,7 +16,6 @@ namespace DataBaseApp
     {
         private string MyDataBase { get; set; }
         private MainForm mainForm;
-        DataBaseFunctions MyDataBaseFunctions = new DataBaseFunctions();
         MySqlConnection conDataBase1 = new MySqlConnection();
 
         private bool IsManuallyClosed = true;
@@ -37,32 +36,47 @@ namespace DataBaseApp
             gbOrders.Enabled = false;   
             gbSuppliers.Enabled = false;
 
+            btEditProduct.Enabled = false;
+            btEditCustomer.Enabled = false;
+            btEditOrder.Enabled = false;
+            btEditSupplier.Enabled = false;
+
+            btRemoveProduct.Enabled = false;
+            btRemoveCustomer.Enabled = false;
+            btRemoveOrder.Enabled = false;
+            btRemoveSupplier.Enabled = false;
+
+            ClearProductsGB();
+            ClearCustomersGB();
+            ClearOrdersGB();
+            ClearSuppliersGB();
+
             if (radioButton2.Checked == true){}
 
             else if (comboBox1.SelectedIndex == 0) 
             {
                 gbProducts.Enabled = true;
 
-                MyDataBaseFunctions.ShowTable(MyDataBase, dataGridView1, "products");
+                ShowTable(MyDataBase, dataGridView1, "products");
 
             }
             else if (comboBox1.SelectedIndex == 1)
             {
                 gbCustomers.Enabled = true;
 
-                MyDataBaseFunctions.ShowTable(MyDataBase, dataGridView1, "customers");
+                ShowTable(MyDataBase, dataGridView1, "customers");
             }
             else if (comboBox1.SelectedIndex == 2)
             {
                 gbOrders.Enabled = true;
 
-                MyDataBaseFunctions.ShowTable(MyDataBase, dataGridView1, "orders");
+                ShowTable(MyDataBase, dataGridView1, "orders");
             }
             else if(comboBox1.SelectedIndex == 3)
             {
                 gbSuppliers.Enabled = true;
 
-                MyDataBaseFunctions.ShowTable(MyDataBase, dataGridView1, "suppliers");
+                ShowTable(MyDataBase, dataGridView1, "suppliers");
             }
         }
 
@@ -72,7 +86,7 @@ namespace DataBaseApp
             if (radioButton1.Checked == true)
             {
                 conDataBase1.Open();
-                MyDataBaseFunctions.ShowTable(MyDataBase, dataGridView1, "products");
+                ShowTable(MyDataBase, dataGridView1, "products");
 
                 comboBox1.Items.Add("products");
                 comboBox1.Items.Add("customers");
@@ -117,7 +131,7 @@ namespace DataBaseApp
 
             MessageBox.Show("Добавихте Успешно!");
 
-            MyDataBaseFunctions.ShowTable(MyDataBase, dataGridView1, "products");
+            ShowTable(MyDataBase, dataGridView1, "products");
         }
 
         private void btRegistrationCustomers_Click(object sender, EventArgs e)
@@ -136,7 +150,7 @@ namespace DataBaseApp
 
             MessageBox.Show("Добавихте Успешно!");
 
-            MyDataBaseFunctions.ShowTable(MyDataBase, dataGridView1, "customers");
+            ShowTable(MyDataBase, dataGridView1, "customers");
         }
 
         private void btRegistrationOrders_Click(object sender, EventArgs e)
@@ -154,7 +168,7 @@ namespace DataBaseApp
 
             MessageBox.Show("Добавихте Успешно!");
 
-            MyDataBaseFunctions.ShowTable(MyDataBase, dataGridView1, "orders");
+            ShowTable(MyDataBase, dataGridView1, "orders");
         }
 
         private void btRegistrationSuppliers_Click(object sender, EventArgs e)
@@ -170,23 +184,7 @@ namespace DataBaseApp
 
             MessageBox.Show("Добавихте Успешно!");
 
-            MyDataBaseFunctions.ShowTable(MyDataBase, dataGridView1, "suppliers");
-        }
-
-        private void btGetCurrentTime_Click(object sender, EventArgs e)
-        {
-            DateTime currentDateTime = DateTime.Now;
-
-            tb_orders_OrderDate.Text = currentDateTime.ToString("yyyy-MM-dd HH:mm:ss");
-        }
-
-        private void btBack_Click(object sender, EventArgs e)
-        {
-            IsManuallyClosed = false;
-            conDataBase1.Close();
-            this.Close();
-            mainForm.Show();
-            IsManuallyClosed = true;
+            ShowTable(MyDataBase, dataGridView1, "suppliers");
         }
 
         private void ManualAditionForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -217,12 +215,14 @@ namespace DataBaseApp
                 MessageBox.Show("Поръчката е намерена!");
 
                 btRemoveProduct.Enabled = true;
+                btEditProduct.Enabled = true;
             }
             else
             {
                 MessageBox.Show("Поръчката не е намерена!");
 
                 btRemoveProduct.Enabled = false;
+                btEditProduct.Enabled = false;
             }
 
             reader.Close();
@@ -243,15 +243,17 @@ namespace DataBaseApp
                 tb_customers_Phone.Text = reader["Phone"].ToString();
                 tb_customers_Address.Text = reader["Address"].ToString();
 
-                MessageBox.Show("Поръчката е намерена!");
+                MessageBox.Show("Клиента е намерен!");
 
                 btRemoveCustomer.Enabled = true;
+                btEditCustomer.Enabled = true;
             }
             else
             {
-                MessageBox.Show("Поръчката не е намерена!");
+                MessageBox.Show("Клиента не е намерен!");
 
                 btRemoveCustomer.Enabled = false;
+                btEditCustomer.Enabled = false;
             }
 
             reader.Close();
@@ -275,12 +277,14 @@ namespace DataBaseApp
                 MessageBox.Show("Поръчката е намерена!");
 
                 btRemoveOrder.Enabled = true;
+                btEditOrder.Enabled = true;
             }
             else
             {
                 MessageBox.Show("Поръчката не е намерена!");
 
                 btRemoveOrder.Enabled = false;
+                btEditOrder.Enabled = false;
             }
 
             reader.Close();
@@ -299,15 +303,17 @@ namespace DataBaseApp
                 tb_suppliers_ContactEmail.Text = reader["ContactEmail"].ToString();
                 tb_suppliers_Phone.Text = reader["Phone"].ToString();
 
-                MessageBox.Show("Поръчката е намерена!");
+                MessageBox.Show("Доставчика е намерен!");
 
                 btRemoveSupplier.Enabled = true;
+                btEditSupplier.Enabled = true;
             }
             else
             {
-                MessageBox.Show("Поръчката не е намерена!");
+                MessageBox.Show("Доставчика не е намерен!");
 
                 btRemoveSupplier.Enabled = false;
+                btEditSupplier.Enabled = false;
             }
 
             reader.Close();
@@ -324,21 +330,16 @@ namespace DataBaseApp
             {
                 MessageBox.Show("Успешно изтрихте продукта!");
 
-                // Clear textboxes after deletion
-                tb_products_ProductID.Clear();
-                tb_products_Name.Clear();
-                cb_products_Category.SelectedIndex = -1;
-                tb_products_Price.Clear();
-                tb_products_QuantityInStock.Clear();
-                tb_products_SupplierID.Clear();
             }
             else
             {
                 MessageBox.Show("Продуктът не беше намерен за изтриване!");
             }
 
+            ClearProductsGB();
             btRemoveProduct.Enabled = false;
-            MyDataBaseFunctions.ShowTable(MyDataBase, dataGridView1, "products");
+            btEditProduct.Enabled = false;
+            ShowTable(MyDataBase, dataGridView1, "products");
         }
 
         private void btRemoveCustomer_Click(object sender, EventArgs e)
@@ -352,21 +353,16 @@ namespace DataBaseApp
             {
                 MessageBox.Show("Успешно изтрихте клиента!");
 
-                // Clear textboxes after deletion
-                tb_customers_CustomerID.Clear();
-                tb_customers_FirstName.Clear();
-                tb_customers_LastName.Clear();
-                tb_customers_Email.Clear();
-                tb_customers_Phone.Clear();
-                tb_customers_Address.Clear();
             }
             else
             {
                 MessageBox.Show("Клиентът не беше намерен за изтриване!");
             }
 
+            ClearCustomersGB();
             btRemoveCustomer.Enabled = false;
-            MyDataBaseFunctions.ShowTable(MyDataBase, dataGridView1, "customers");
+            btEditCustomer.Enabled = false;
+            ShowTable(MyDataBase, dataGridView1, "customers");
         }
 
         private void btRemoveOrder_Click(object sender, EventArgs e)
@@ -380,21 +376,16 @@ namespace DataBaseApp
             {
                 MessageBox.Show("Успешно изтрихте поръчката!");
 
-                // Clear textboxes after deletion
-                tb_orders_OrderID.Clear();
-                tb_orders_CustomerID.Clear();
-                tb_orders_ProductID.Clear();
-                tb_orders_Quantity.Clear();
-                tb_orders_OrderDate.Clear();
-                cb_orders_Status.SelectedIndex = -1;
             }
             else
             {
                 MessageBox.Show("Поръчката не беше намерена за изтриване!");
             }
 
+            ClearOrdersGB();
             btRemoveOrder.Enabled = false;
-            MyDataBaseFunctions.ShowTable(MyDataBase, dataGridView1, "orders");
+            btEditOrder.Enabled = false;
+            ShowTable(MyDataBase, dataGridView1, "orders");
         }
 
         private void btRemoveSupplier_Click(object sender, EventArgs e)
@@ -408,19 +399,192 @@ namespace DataBaseApp
             {
                 MessageBox.Show("Успешно изтрихте доставчика!");
 
-                // Clear textboxes after deletion
-                tb_suppliers_SupplierID.Clear();
-                tb_suppliers_Name.Clear();
-                tb_suppliers_ContactEmail.Clear();
-                tb_suppliers_Phone.Clear();
             }
             else
             {
                 MessageBox.Show("Доставчикът не беше намерен за изтриване!");
             }
 
+            ClearSuppliersGB();
             btRemoveSupplier.Enabled = false;
-            MyDataBaseFunctions.ShowTable(MyDataBase, dataGridView1, "suppliers");
+            btEditSupplier.Enabled = false;
+            ShowTable(MyDataBase, dataGridView1, "suppliers");
+        }
+
+
+
+        private void btEditProduct_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmdDataBase1 = new MySqlCommand("UPDATE products SET Name = @Name, Category = @Category, Price = @Price, QuantityInStock = @QuantityInStock, SupplierID = @SupplierID WHERE ProductID = @ProductID", conDataBase1);
+
+            cmdDataBase1.Parameters.AddWithValue("@ProductID", tb_products_ProductID.Text);
+            cmdDataBase1.Parameters.AddWithValue("@Name", tb_products_Name.Text);
+            cmdDataBase1.Parameters.AddWithValue("@Category", cb_products_Category.SelectedIndex + 1);
+            cmdDataBase1.Parameters.AddWithValue("@Price", tb_products_Price.Text);
+            cmdDataBase1.Parameters.AddWithValue("@QuantityInStock", tb_products_QuantityInStock.Text);
+            cmdDataBase1.Parameters.AddWithValue("@SupplierID", tb_products_SupplierID.Text);
+
+            int rowsAffected = cmdDataBase1.ExecuteNonQuery();
+
+            if (rowsAffected > 0)
+            {
+                MessageBox.Show("Продуктът беше успешно редактиран!");
+            }
+            else
+            {
+                MessageBox.Show("Грешка при редактирането на продукта!");
+            }
+
+            ShowTable(MyDataBase, dataGridView1, "products");
+        }
+
+        private void btEditCustomer_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmdDataBase1 = new MySqlCommand("UPDATE customers SET FirstName = @FirstName, LastName = @LastName, Email = @Email, Phone = @Phone, Address = @Address WHERE CustomerID = @CustomerID", conDataBase1);
+
+            cmdDataBase1.Parameters.AddWithValue("@CustomerID", tb_customers_CustomerID.Text);
+            cmdDataBase1.Parameters.AddWithValue("@FirstName", tb_customers_FirstName.Text);
+            cmdDataBase1.Parameters.AddWithValue("@LastName", tb_customers_LastName.Text);
+            cmdDataBase1.Parameters.AddWithValue("@Email", tb_customers_Email.Text);
+            cmdDataBase1.Parameters.AddWithValue("@Phone", tb_customers_Phone.Text);
+            cmdDataBase1.Parameters.AddWithValue("@Address", tb_customers_Address.Text);
+
+            int rowsAffected = cmdDataBase1.ExecuteNonQuery();
+
+            if (rowsAffected > 0)
+            {
+                MessageBox.Show("Клиентът беше успешно редактиран!");
+            }
+            else
+            {
+                MessageBox.Show("Грешка при редактирането на клиента!");
+            }
+
+            ShowTable(MyDataBase, dataGridView1, "customers");
+        }
+
+        private void btEditOrder_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmdDataBase1 = new MySqlCommand("UPDATE orders SET CustomerID = @CustomerID, ProductID = @ProductID, Quantity = @Quantity, OrderDate = @OrderDate, Status = @Status WHERE OrderID = @OrderID", conDataBase1);
+
+            cmdDataBase1.Parameters.AddWithValue("@OrderID", tb_orders_OrderID.Text);
+            cmdDataBase1.Parameters.AddWithValue("@CustomerID", tb_orders_CustomerID.Text);
+            cmdDataBase1.Parameters.AddWithValue("@ProductID", tb_orders_ProductID.Text);
+            cmdDataBase1.Parameters.AddWithValue("@Quantity", tb_orders_Quantity.Text);
+            cmdDataBase1.Parameters.AddWithValue("@OrderDate", tb_orders_OrderDate.Text);
+            cmdDataBase1.Parameters.AddWithValue("@Status", cb_orders_Status.SelectedIndex + 1);
+
+            int rowsAffected = cmdDataBase1.ExecuteNonQuery();
+
+            if (rowsAffected > 0)
+            {
+                MessageBox.Show("Поръчката беше успешно редактирана!");
+            }
+            else
+            {
+                MessageBox.Show("Грешка при редактирането на поръчката!");
+            }
+
+            ShowTable(MyDataBase, dataGridView1, "orders");
+        }
+
+        private void btEditSupplier_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmdDataBase1 = new MySqlCommand("UPDATE suppliers SET Name = @Name, ContactEmail = @ContactEmail, Phone = @Phone WHERE SupplierID = @SupplierID", conDataBase1);
+
+            cmdDataBase1.Parameters.AddWithValue("@SupplierID", tb_suppliers_SupplierID.Text);
+            cmdDataBase1.Parameters.AddWithValue("@Name", tb_suppliers_Name.Text);
+            cmdDataBase1.Parameters.AddWithValue("@ContactEmail", tb_suppliers_ContactEmail.Text);
+            cmdDataBase1.Parameters.AddWithValue("@Phone", tb_suppliers_Phone.Text);
+
+            int rowsAffected = cmdDataBase1.ExecuteNonQuery();
+
+            if (rowsAffected > 0)
+            {
+                MessageBox.Show("Доставчикът беше успешно редактиран!");
+            }
+            else
+            {
+                MessageBox.Show("Грешка при редактирането на доставчика!");
+            }
+
+            ShowTable(MyDataBase, dataGridView1, "suppliers");
+        }
+
+
+
+        public void ShowTable(string dataBase, DataGridView dataGridView, string table)
+        {
+            MySqlConnection conDataBase = new MySqlConnection(dataBase);
+            MySqlCommand cmdDataBase = new MySqlCommand($"Select *from {table} ", conDataBase);
+
+            MySqlDataAdapter sda = new MySqlDataAdapter();
+            sda.SelectCommand = cmdDataBase;
+
+            DataTable dbTable = new DataTable();
+            sda.Fill(dbTable);
+
+            BindingSource bSource = new BindingSource();
+            bSource.DataSource = dbTable;
+
+            dataGridView.AutoGenerateColumns = true;
+            dataGridView.DataSource = bSource;
+
+            conDataBase.Close();
+        }
+
+        private void ClearProductsGB()
+        {
+            tb_products_ProductID.Clear();
+            tb_products_Name.Clear();
+            cb_products_Category.SelectedIndex = -1;
+            tb_products_Price.Clear();
+            tb_products_QuantityInStock.Clear();
+            tb_products_SupplierID.Clear();
+        }
+
+        private void ClearCustomersGB()
+        {
+            tb_customers_CustomerID.Clear();
+            tb_customers_FirstName.Clear();
+            tb_customers_LastName.Clear();
+            tb_customers_Email.Clear();
+            tb_customers_Phone.Clear();
+            tb_customers_Address.Clear();
+        }
+
+        private void ClearOrdersGB()
+        {
+            tb_orders_OrderID.Clear();
+            tb_orders_CustomerID.Clear();
+            tb_orders_ProductID.Clear();
+            tb_orders_Quantity.Clear();
+            tb_orders_OrderDate.Clear();
+            cb_orders_Status.SelectedIndex = -1;
+        }
+
+        private void ClearSuppliersGB()
+        {
+            tb_suppliers_SupplierID.Clear();
+            tb_suppliers_Name.Clear();
+            tb_suppliers_ContactEmail.Clear();
+            tb_suppliers_Phone.Clear();
+        }
+
+        private void btGetCurrentTime_Click(object sender, EventArgs e)
+        {
+            DateTime currentDateTime = DateTime.Now;
+
+            tb_orders_OrderDate.Text = currentDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+        }
+
+        private void btBack_Click(object sender, EventArgs e)
+        {
+            IsManuallyClosed = false;
+            conDataBase1.Close();
+            this.Close();
+            mainForm.Show();
+            IsManuallyClosed = true;
         }
     }
 }

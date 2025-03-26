@@ -23,12 +23,5 @@ namespace DataBaseApp
             Hide();
             maf.Show();
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            ManualDeletionForm mad = new ManualDeletionForm(this);
-            Hide();
-            mad.Show();
-        }
     }
 }

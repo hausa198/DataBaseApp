@@ -32,6 +32,9 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbProducts = new System.Windows.Forms.GroupBox();
+            this.btEditProduct = new System.Windows.Forms.Button();
+            this.btFindProducts = new System.Windows.Forms.Button();
+            this.btRemoveProduct = new System.Windows.Forms.Button();
             this.cb_products_Category = new System.Windows.Forms.ComboBox();
             this.btRegistrationProducts = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,6 +51,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.tb_customers_CustomerID = new System.Windows.Forms.TextBox();
             this.gbCustomers = new System.Windows.Forms.GroupBox();
+            this.btFindCustomers = new System.Windows.Forms.Button();
+            this.btEditCustomer = new System.Windows.Forms.Button();
+            this.btRemoveCustomer = new System.Windows.Forms.Button();
             this.btRegistrationCustomers = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.tb_customers_LastName = new System.Windows.Forms.TextBox();
@@ -60,6 +66,9 @@
             this.tb_customers_FirstName = new System.Windows.Forms.TextBox();
             this.tb_customers_Phone = new System.Windows.Forms.TextBox();
             this.gbOrders = new System.Windows.Forms.GroupBox();
+            this.btFindOrders = new System.Windows.Forms.Button();
+            this.btEditOrder = new System.Windows.Forms.Button();
+            this.btRemoveOrder = new System.Windows.Forms.Button();
             this.btGetCurrentTime = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.cb_orders_Status = new System.Windows.Forms.ComboBox();
@@ -78,6 +87,9 @@
             this.tb_suppliers_SupplierID = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.gbSuppliers = new System.Windows.Forms.GroupBox();
+            this.btRemoveSupplier = new System.Windows.Forms.Button();
+            this.btEditSupplier = new System.Windows.Forms.Button();
+            this.btFindSuppliers = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.btRegistrationSuppliers = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
@@ -88,14 +100,6 @@
             this.tb_suppliers_Phone = new System.Windows.Forms.TextBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.btBack = new System.Windows.Forms.Button();
-            this.btRemoveProduct = new System.Windows.Forms.Button();
-            this.btRemoveCustomer = new System.Windows.Forms.Button();
-            this.btRemoveOrder = new System.Windows.Forms.Button();
-            this.btRemoveSupplier = new System.Windows.Forms.Button();
-            this.btFindProducts = new System.Windows.Forms.Button();
-            this.btFindCustomers = new System.Windows.Forms.Button();
-            this.btFindOrders = new System.Windows.Forms.Button();
-            this.btFindSuppliers = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbProducts.SuspendLayout();
             this.gbCustomers.SuspendLayout();
@@ -137,6 +141,7 @@
             // 
             // gbProducts
             // 
+            this.gbProducts.Controls.Add(this.btEditProduct);
             this.gbProducts.Controls.Add(this.btFindProducts);
             this.gbProducts.Controls.Add(this.btRemoveProduct);
             this.gbProducts.Controls.Add(this.cb_products_Category);
@@ -163,6 +168,41 @@
             this.gbProducts.TabStop = false;
             this.gbProducts.Text = "products";
             // 
+            // btEditProduct
+            // 
+            this.btEditProduct.Enabled = false;
+            this.btEditProduct.Location = new System.Drawing.Point(8, 731);
+            this.btEditProduct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btEditProduct.Name = "btEditProduct";
+            this.btEditProduct.Size = new System.Drawing.Size(286, 38);
+            this.btEditProduct.TabIndex = 36;
+            this.btEditProduct.Text = "Редактиране";
+            this.btEditProduct.UseVisualStyleBackColor = true;
+            this.btEditProduct.Click += new System.EventHandler(this.btEditProduct_Click);
+            // 
+            // btFindProducts
+            // 
+            this.btFindProducts.Location = new System.Drawing.Point(8, 112);
+            this.btFindProducts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btFindProducts.Name = "btFindProducts";
+            this.btFindProducts.Size = new System.Drawing.Size(284, 38);
+            this.btFindProducts.TabIndex = 35;
+            this.btFindProducts.Text = "Намери";
+            this.btFindProducts.UseVisualStyleBackColor = true;
+            this.btFindProducts.Click += new System.EventHandler(this.btFindProducts_Click);
+            // 
+            // btRemoveProduct
+            // 
+            this.btRemoveProduct.Enabled = false;
+            this.btRemoveProduct.Location = new System.Drawing.Point(8, 779);
+            this.btRemoveProduct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btRemoveProduct.Name = "btRemoveProduct";
+            this.btRemoveProduct.Size = new System.Drawing.Size(286, 38);
+            this.btRemoveProduct.TabIndex = 32;
+            this.btRemoveProduct.Text = "Изтриване";
+            this.btRemoveProduct.UseVisualStyleBackColor = true;
+            this.btRemoveProduct.Click += new System.EventHandler(this.btRemoveProduct_Click);
+            // 
             // cb_products_Category
             // 
             this.cb_products_Category.FormattingEnabled = true;
@@ -178,10 +218,10 @@
             // 
             // btRegistrationProducts
             // 
-            this.btRegistrationProducts.Location = new System.Drawing.Point(8, 731);
+            this.btRegistrationProducts.Location = new System.Drawing.Point(8, 683);
             this.btRegistrationProducts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btRegistrationProducts.Name = "btRegistrationProducts";
-            this.btRegistrationProducts.Size = new System.Drawing.Size(148, 38);
+            this.btRegistrationProducts.Size = new System.Drawing.Size(284, 38);
             this.btRegistrationProducts.TabIndex = 6;
             this.btRegistrationProducts.Text = "Записване";
             this.btRegistrationProducts.UseVisualStyleBackColor = true;
@@ -225,7 +265,7 @@
             this.tb_products_Name.Location = new System.Drawing.Point(14, 190);
             this.tb_products_Name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_products_Name.Name = "tb_products_Name";
-            this.tb_products_Name.Size = new System.Drawing.Size(274, 35);
+            this.tb_products_Name.Size = new System.Drawing.Size(278, 35);
             this.tb_products_Name.TabIndex = 7;
             // 
             // label2
@@ -244,7 +284,7 @@
             this.tb_products_ProductID.Location = new System.Drawing.Point(9, 69);
             this.tb_products_ProductID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_products_ProductID.Name = "tb_products_ProductID";
-            this.tb_products_ProductID.Size = new System.Drawing.Size(274, 35);
+            this.tb_products_ProductID.Size = new System.Drawing.Size(283, 35);
             this.tb_products_ProductID.TabIndex = 0;
             // 
             // tb_products_QuantityInStock
@@ -252,7 +292,7 @@
             this.tb_products_QuantityInStock.Location = new System.Drawing.Point(14, 433);
             this.tb_products_QuantityInStock.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_products_QuantityInStock.Name = "tb_products_QuantityInStock";
-            this.tb_products_QuantityInStock.Size = new System.Drawing.Size(274, 35);
+            this.tb_products_QuantityInStock.Size = new System.Drawing.Size(278, 35);
             this.tb_products_QuantityInStock.TabIndex = 7;
             // 
             // label7
@@ -271,7 +311,7 @@
             this.tb_products_SupplierID.Location = new System.Drawing.Point(14, 513);
             this.tb_products_SupplierID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_products_SupplierID.Name = "tb_products_SupplierID";
-            this.tb_products_SupplierID.Size = new System.Drawing.Size(274, 35);
+            this.tb_products_SupplierID.Size = new System.Drawing.Size(278, 35);
             this.tb_products_SupplierID.TabIndex = 0;
             // 
             // label5
@@ -290,7 +330,7 @@
             this.tb_products_Price.Location = new System.Drawing.Point(14, 350);
             this.tb_products_Price.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_products_Price.Name = "tb_products_Price";
-            this.tb_products_Price.Size = new System.Drawing.Size(274, 35);
+            this.tb_products_Price.Size = new System.Drawing.Size(278, 35);
             this.tb_products_Price.TabIndex = 9;
             // 
             // label8
@@ -309,12 +349,13 @@
             this.tb_customers_CustomerID.Location = new System.Drawing.Point(9, 68);
             this.tb_customers_CustomerID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_customers_CustomerID.Name = "tb_customers_CustomerID";
-            this.tb_customers_CustomerID.Size = new System.Drawing.Size(274, 35);
+            this.tb_customers_CustomerID.Size = new System.Drawing.Size(283, 35);
             this.tb_customers_CustomerID.TabIndex = 9;
             // 
             // gbCustomers
             // 
             this.gbCustomers.Controls.Add(this.btFindCustomers);
+            this.gbCustomers.Controls.Add(this.btEditCustomer);
             this.gbCustomers.Controls.Add(this.btRemoveCustomer);
             this.gbCustomers.Controls.Add(this.btRegistrationCustomers);
             this.gbCustomers.Controls.Add(this.label8);
@@ -340,12 +381,47 @@
             this.gbCustomers.TabStop = false;
             this.gbCustomers.Text = "customers";
             // 
+            // btFindCustomers
+            // 
+            this.btFindCustomers.Location = new System.Drawing.Point(9, 110);
+            this.btFindCustomers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btFindCustomers.Name = "btFindCustomers";
+            this.btFindCustomers.Size = new System.Drawing.Size(284, 38);
+            this.btFindCustomers.TabIndex = 36;
+            this.btFindCustomers.Text = "Намери";
+            this.btFindCustomers.UseVisualStyleBackColor = true;
+            this.btFindCustomers.Click += new System.EventHandler(this.btFindCustomers_Click);
+            // 
+            // btEditCustomer
+            // 
+            this.btEditCustomer.Enabled = false;
+            this.btEditCustomer.Location = new System.Drawing.Point(8, 729);
+            this.btEditCustomer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btEditCustomer.Name = "btEditCustomer";
+            this.btEditCustomer.Size = new System.Drawing.Size(286, 38);
+            this.btEditCustomer.TabIndex = 37;
+            this.btEditCustomer.Text = "Редактиране";
+            this.btEditCustomer.UseVisualStyleBackColor = true;
+            this.btEditCustomer.Click += new System.EventHandler(this.btEditCustomer_Click);
+            // 
+            // btRemoveCustomer
+            // 
+            this.btRemoveCustomer.Enabled = false;
+            this.btRemoveCustomer.Location = new System.Drawing.Point(8, 777);
+            this.btRemoveCustomer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btRemoveCustomer.Name = "btRemoveCustomer";
+            this.btRemoveCustomer.Size = new System.Drawing.Size(286, 38);
+            this.btRemoveCustomer.TabIndex = 33;
+            this.btRemoveCustomer.Text = "Изтриване";
+            this.btRemoveCustomer.UseVisualStyleBackColor = true;
+            this.btRemoveCustomer.Click += new System.EventHandler(this.btRemoveCustomer_Click);
+            // 
             // btRegistrationCustomers
             // 
-            this.btRegistrationCustomers.Location = new System.Drawing.Point(8, 729);
+            this.btRegistrationCustomers.Location = new System.Drawing.Point(8, 681);
             this.btRegistrationCustomers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btRegistrationCustomers.Name = "btRegistrationCustomers";
-            this.btRegistrationCustomers.Size = new System.Drawing.Size(150, 38);
+            this.btRegistrationCustomers.Size = new System.Drawing.Size(286, 38);
             this.btRegistrationCustomers.TabIndex = 6;
             this.btRegistrationCustomers.Text = "Записване";
             this.btRegistrationCustomers.UseVisualStyleBackColor = true;
@@ -367,7 +443,7 @@
             this.tb_customers_LastName.Location = new System.Drawing.Point(9, 269);
             this.tb_customers_LastName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_customers_LastName.Name = "tb_customers_LastName";
-            this.tb_customers_LastName.Size = new System.Drawing.Size(274, 35);
+            this.tb_customers_LastName.Size = new System.Drawing.Size(283, 35);
             this.tb_customers_LastName.TabIndex = 0;
             // 
             // label13
@@ -397,7 +473,7 @@
             this.tb_customers_Address.Location = new System.Drawing.Point(9, 512);
             this.tb_customers_Address.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_customers_Address.Name = "tb_customers_Address";
-            this.tb_customers_Address.Size = new System.Drawing.Size(274, 35);
+            this.tb_customers_Address.Size = new System.Drawing.Size(283, 35);
             this.tb_customers_Address.TabIndex = 15;
             // 
             // tb_customers_Email
@@ -405,7 +481,7 @@
             this.tb_customers_Email.Location = new System.Drawing.Point(9, 349);
             this.tb_customers_Email.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_customers_Email.Name = "tb_customers_Email";
-            this.tb_customers_Email.Size = new System.Drawing.Size(274, 35);
+            this.tb_customers_Email.Size = new System.Drawing.Size(283, 35);
             this.tb_customers_Email.TabIndex = 11;
             // 
             // label9
@@ -435,7 +511,7 @@
             this.tb_customers_FirstName.Location = new System.Drawing.Point(9, 189);
             this.tb_customers_FirstName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_customers_FirstName.Name = "tb_customers_FirstName";
-            this.tb_customers_FirstName.Size = new System.Drawing.Size(274, 35);
+            this.tb_customers_FirstName.Size = new System.Drawing.Size(283, 35);
             this.tb_customers_FirstName.TabIndex = 7;
             // 
             // tb_customers_Phone
@@ -443,12 +519,13 @@
             this.tb_customers_Phone.Location = new System.Drawing.Point(9, 432);
             this.tb_customers_Phone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_customers_Phone.Name = "tb_customers_Phone";
-            this.tb_customers_Phone.Size = new System.Drawing.Size(274, 35);
+            this.tb_customers_Phone.Size = new System.Drawing.Size(283, 35);
             this.tb_customers_Phone.TabIndex = 13;
             // 
             // gbOrders
             // 
             this.gbOrders.Controls.Add(this.btFindOrders);
+            this.gbOrders.Controls.Add(this.btEditOrder);
             this.gbOrders.Controls.Add(this.btRemoveOrder);
             this.gbOrders.Controls.Add(this.btGetCurrentTime);
             this.gbOrders.Controls.Add(this.label24);
@@ -475,6 +552,41 @@
             this.gbOrders.TabIndex = 11;
             this.gbOrders.TabStop = false;
             this.gbOrders.Text = "orders";
+            // 
+            // btFindOrders
+            // 
+            this.btFindOrders.Location = new System.Drawing.Point(8, 109);
+            this.btFindOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btFindOrders.Name = "btFindOrders";
+            this.btFindOrders.Size = new System.Drawing.Size(284, 38);
+            this.btFindOrders.TabIndex = 37;
+            this.btFindOrders.Text = "Намери";
+            this.btFindOrders.UseVisualStyleBackColor = true;
+            this.btFindOrders.Click += new System.EventHandler(this.btFindOrders_Click);
+            // 
+            // btEditOrder
+            // 
+            this.btEditOrder.Enabled = false;
+            this.btEditOrder.Location = new System.Drawing.Point(8, 728);
+            this.btEditOrder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btEditOrder.Name = "btEditOrder";
+            this.btEditOrder.Size = new System.Drawing.Size(286, 38);
+            this.btEditOrder.TabIndex = 38;
+            this.btEditOrder.Text = "Редактиране";
+            this.btEditOrder.UseVisualStyleBackColor = true;
+            this.btEditOrder.Click += new System.EventHandler(this.btEditOrder_Click);
+            // 
+            // btRemoveOrder
+            // 
+            this.btRemoveOrder.Enabled = false;
+            this.btRemoveOrder.Location = new System.Drawing.Point(8, 776);
+            this.btRemoveOrder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btRemoveOrder.Name = "btRemoveOrder";
+            this.btRemoveOrder.Size = new System.Drawing.Size(286, 38);
+            this.btRemoveOrder.TabIndex = 34;
+            this.btRemoveOrder.Text = "Изтриване";
+            this.btRemoveOrder.UseVisualStyleBackColor = true;
+            this.btRemoveOrder.Click += new System.EventHandler(this.btRemoveOrder_Click);
             // 
             // btGetCurrentTime
             // 
@@ -540,7 +652,7 @@
             this.tb_orders_OrderDate.Location = new System.Drawing.Point(10, 430);
             this.tb_orders_OrderDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_orders_OrderDate.Name = "tb_orders_OrderDate";
-            this.tb_orders_OrderDate.Size = new System.Drawing.Size(274, 35);
+            this.tb_orders_OrderDate.Size = new System.Drawing.Size(282, 35);
             this.tb_orders_OrderDate.TabIndex = 25;
             // 
             // label17
@@ -559,7 +671,7 @@
             this.tb_orders_Quantity.Location = new System.Drawing.Point(10, 347);
             this.tb_orders_Quantity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_orders_Quantity.Name = "tb_orders_Quantity";
-            this.tb_orders_Quantity.Size = new System.Drawing.Size(274, 35);
+            this.tb_orders_Quantity.Size = new System.Drawing.Size(282, 35);
             this.tb_orders_Quantity.TabIndex = 23;
             // 
             // label16
@@ -578,7 +690,7 @@
             this.tb_orders_ProductID.Location = new System.Drawing.Point(10, 267);
             this.tb_orders_ProductID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_orders_ProductID.Name = "tb_orders_ProductID";
-            this.tb_orders_ProductID.Size = new System.Drawing.Size(274, 35);
+            this.tb_orders_ProductID.Size = new System.Drawing.Size(282, 35);
             this.tb_orders_ProductID.TabIndex = 21;
             // 
             // label15
@@ -597,7 +709,7 @@
             this.tb_orders_CustomerID.Location = new System.Drawing.Point(10, 187);
             this.tb_orders_CustomerID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_orders_CustomerID.Name = "tb_orders_CustomerID";
-            this.tb_orders_CustomerID.Size = new System.Drawing.Size(274, 35);
+            this.tb_orders_CustomerID.Size = new System.Drawing.Size(282, 35);
             this.tb_orders_CustomerID.TabIndex = 19;
             // 
             // label14
@@ -616,15 +728,15 @@
             this.tb_orders_OrderID.Location = new System.Drawing.Point(9, 66);
             this.tb_orders_OrderID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_orders_OrderID.Name = "tb_orders_OrderID";
-            this.tb_orders_OrderID.Size = new System.Drawing.Size(274, 35);
+            this.tb_orders_OrderID.Size = new System.Drawing.Size(282, 35);
             this.tb_orders_OrderID.TabIndex = 17;
             // 
             // btRegistrationOrders
             // 
-            this.btRegistrationOrders.Location = new System.Drawing.Point(8, 728);
+            this.btRegistrationOrders.Location = new System.Drawing.Point(8, 680);
             this.btRegistrationOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btRegistrationOrders.Name = "btRegistrationOrders";
-            this.btRegistrationOrders.Size = new System.Drawing.Size(150, 38);
+            this.btRegistrationOrders.Size = new System.Drawing.Size(286, 38);
             this.btRegistrationOrders.TabIndex = 6;
             this.btRegistrationOrders.Text = "Записване";
             this.btRegistrationOrders.UseVisualStyleBackColor = true;
@@ -635,7 +747,7 @@
             this.tb_suppliers_SupplierID.Location = new System.Drawing.Point(9, 66);
             this.tb_suppliers_SupplierID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_suppliers_SupplierID.Name = "tb_suppliers_SupplierID";
-            this.tb_suppliers_SupplierID.Size = new System.Drawing.Size(274, 35);
+            this.tb_suppliers_SupplierID.Size = new System.Drawing.Size(283, 35);
             this.tb_suppliers_SupplierID.TabIndex = 27;
             // 
             // radioButton1
@@ -655,6 +767,7 @@
             // gbSuppliers
             // 
             this.gbSuppliers.Controls.Add(this.btRemoveSupplier);
+            this.gbSuppliers.Controls.Add(this.btEditSupplier);
             this.gbSuppliers.Controls.Add(this.btFindSuppliers);
             this.gbSuppliers.Controls.Add(this.label23);
             this.gbSuppliers.Controls.Add(this.btRegistrationSuppliers);
@@ -676,6 +789,41 @@
             this.gbSuppliers.TabStop = false;
             this.gbSuppliers.Text = "suppliers";
             // 
+            // btRemoveSupplier
+            // 
+            this.btRemoveSupplier.Enabled = false;
+            this.btRemoveSupplier.Location = new System.Drawing.Point(8, 776);
+            this.btRemoveSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btRemoveSupplier.Name = "btRemoveSupplier";
+            this.btRemoveSupplier.Size = new System.Drawing.Size(286, 38);
+            this.btRemoveSupplier.TabIndex = 35;
+            this.btRemoveSupplier.Text = "Изтриване";
+            this.btRemoveSupplier.UseVisualStyleBackColor = true;
+            this.btRemoveSupplier.Click += new System.EventHandler(this.btRemoveSupplier_Click);
+            // 
+            // btEditSupplier
+            // 
+            this.btEditSupplier.Enabled = false;
+            this.btEditSupplier.Location = new System.Drawing.Point(8, 728);
+            this.btEditSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btEditSupplier.Name = "btEditSupplier";
+            this.btEditSupplier.Size = new System.Drawing.Size(286, 38);
+            this.btEditSupplier.TabIndex = 39;
+            this.btEditSupplier.Text = "Редактиране";
+            this.btEditSupplier.UseVisualStyleBackColor = true;
+            this.btEditSupplier.Click += new System.EventHandler(this.btEditSupplier_Click);
+            // 
+            // btFindSuppliers
+            // 
+            this.btFindSuppliers.Location = new System.Drawing.Point(9, 109);
+            this.btFindSuppliers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btFindSuppliers.Name = "btFindSuppliers";
+            this.btFindSuppliers.Size = new System.Drawing.Size(284, 38);
+            this.btFindSuppliers.TabIndex = 38;
+            this.btFindSuppliers.Text = "Намери";
+            this.btFindSuppliers.UseVisualStyleBackColor = true;
+            this.btFindSuppliers.Click += new System.EventHandler(this.btFindSuppliers_Click);
+            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -689,10 +837,10 @@
             // 
             // btRegistrationSuppliers
             // 
-            this.btRegistrationSuppliers.Location = new System.Drawing.Point(8, 728);
+            this.btRegistrationSuppliers.Location = new System.Drawing.Point(8, 680);
             this.btRegistrationSuppliers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btRegistrationSuppliers.Name = "btRegistrationSuppliers";
-            this.btRegistrationSuppliers.Size = new System.Drawing.Size(150, 38);
+            this.btRegistrationSuppliers.Size = new System.Drawing.Size(286, 38);
             this.btRegistrationSuppliers.TabIndex = 6;
             this.btRegistrationSuppliers.Text = "Записване";
             this.btRegistrationSuppliers.UseVisualStyleBackColor = true;
@@ -714,7 +862,7 @@
             this.tb_suppliers_Name.Location = new System.Drawing.Point(9, 184);
             this.tb_suppliers_Name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_suppliers_Name.Name = "tb_suppliers_Name";
-            this.tb_suppliers_Name.Size = new System.Drawing.Size(274, 35);
+            this.tb_suppliers_Name.Size = new System.Drawing.Size(283, 35);
             this.tb_suppliers_Name.TabIndex = 0;
             // 
             // label21
@@ -744,7 +892,7 @@
             this.tb_suppliers_ContactEmail.Location = new System.Drawing.Point(9, 264);
             this.tb_suppliers_ContactEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_suppliers_ContactEmail.Name = "tb_suppliers_ContactEmail";
-            this.tb_suppliers_ContactEmail.Size = new System.Drawing.Size(274, 35);
+            this.tb_suppliers_ContactEmail.Size = new System.Drawing.Size(283, 35);
             this.tb_suppliers_ContactEmail.TabIndex = 15;
             // 
             // tb_suppliers_Phone
@@ -752,7 +900,7 @@
             this.tb_suppliers_Phone.Location = new System.Drawing.Point(9, 344);
             this.tb_suppliers_Phone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_suppliers_Phone.Name = "tb_suppliers_Phone";
-            this.tb_suppliers_Phone.Size = new System.Drawing.Size(274, 35);
+            this.tb_suppliers_Phone.Size = new System.Drawing.Size(283, 35);
             this.tb_suppliers_Phone.TabIndex = 11;
             // 
             // radioButton2
@@ -782,98 +930,6 @@
             this.btBack.Text = "Назад";
             this.btBack.UseVisualStyleBackColor = false;
             this.btBack.Click += new System.EventHandler(this.btBack_Click);
-            // 
-            // btRemoveProduct
-            // 
-            this.btRemoveProduct.Enabled = false;
-            this.btRemoveProduct.Location = new System.Drawing.Point(8, 779);
-            this.btRemoveProduct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btRemoveProduct.Name = "btRemoveProduct";
-            this.btRemoveProduct.Size = new System.Drawing.Size(150, 38);
-            this.btRemoveProduct.TabIndex = 32;
-            this.btRemoveProduct.Text = "Изтриване";
-            this.btRemoveProduct.UseVisualStyleBackColor = true;
-            this.btRemoveProduct.Click += new System.EventHandler(this.btRemoveProduct_Click);
-            // 
-            // btRemoveCustomer
-            // 
-            this.btRemoveCustomer.Enabled = false;
-            this.btRemoveCustomer.Location = new System.Drawing.Point(8, 777);
-            this.btRemoveCustomer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btRemoveCustomer.Name = "btRemoveCustomer";
-            this.btRemoveCustomer.Size = new System.Drawing.Size(150, 38);
-            this.btRemoveCustomer.TabIndex = 33;
-            this.btRemoveCustomer.Text = "Изтриване";
-            this.btRemoveCustomer.UseVisualStyleBackColor = true;
-            this.btRemoveCustomer.Click += new System.EventHandler(this.btRemoveCustomer_Click);
-            // 
-            // btRemoveOrder
-            // 
-            this.btRemoveOrder.Enabled = false;
-            this.btRemoveOrder.Location = new System.Drawing.Point(8, 776);
-            this.btRemoveOrder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btRemoveOrder.Name = "btRemoveOrder";
-            this.btRemoveOrder.Size = new System.Drawing.Size(150, 38);
-            this.btRemoveOrder.TabIndex = 34;
-            this.btRemoveOrder.Text = "Изтриване";
-            this.btRemoveOrder.UseVisualStyleBackColor = true;
-            this.btRemoveOrder.Click += new System.EventHandler(this.btRemoveOrder_Click);
-            // 
-            // btRemoveSupplier
-            // 
-            this.btRemoveSupplier.Enabled = false;
-            this.btRemoveSupplier.Location = new System.Drawing.Point(8, 776);
-            this.btRemoveSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btRemoveSupplier.Name = "btRemoveSupplier";
-            this.btRemoveSupplier.Size = new System.Drawing.Size(150, 38);
-            this.btRemoveSupplier.TabIndex = 35;
-            this.btRemoveSupplier.Text = "Изтриване";
-            this.btRemoveSupplier.UseVisualStyleBackColor = true;
-            this.btRemoveSupplier.Click += new System.EventHandler(this.btRemoveSupplier_Click);
-            // 
-            // btFindProducts
-            // 
-            this.btFindProducts.Location = new System.Drawing.Point(8, 112);
-            this.btFindProducts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btFindProducts.Name = "btFindProducts";
-            this.btFindProducts.Size = new System.Drawing.Size(150, 38);
-            this.btFindProducts.TabIndex = 35;
-            this.btFindProducts.Text = "Намери";
-            this.btFindProducts.UseVisualStyleBackColor = true;
-            this.btFindProducts.Click += new System.EventHandler(this.btFindProducts_Click);
-            // 
-            // btFindCustomers
-            // 
-            this.btFindCustomers.Location = new System.Drawing.Point(9, 110);
-            this.btFindCustomers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btFindCustomers.Name = "btFindCustomers";
-            this.btFindCustomers.Size = new System.Drawing.Size(150, 38);
-            this.btFindCustomers.TabIndex = 36;
-            this.btFindCustomers.Text = "Намери";
-            this.btFindCustomers.UseVisualStyleBackColor = true;
-            this.btFindCustomers.Click += new System.EventHandler(this.btFindCustomers_Click);
-            // 
-            // btFindOrders
-            // 
-            this.btFindOrders.Location = new System.Drawing.Point(8, 109);
-            this.btFindOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btFindOrders.Name = "btFindOrders";
-            this.btFindOrders.Size = new System.Drawing.Size(150, 38);
-            this.btFindOrders.TabIndex = 37;
-            this.btFindOrders.Text = "Намери";
-            this.btFindOrders.UseVisualStyleBackColor = true;
-            this.btFindOrders.Click += new System.EventHandler(this.btFindOrders_Click);
-            // 
-            // btFindSuppliers
-            // 
-            this.btFindSuppliers.Location = new System.Drawing.Point(9, 109);
-            this.btFindSuppliers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btFindSuppliers.Name = "btFindSuppliers";
-            this.btFindSuppliers.Size = new System.Drawing.Size(150, 38);
-            this.btFindSuppliers.TabIndex = 38;
-            this.btFindSuppliers.Text = "Намери";
-            this.btFindSuppliers.UseVisualStyleBackColor = true;
-            this.btFindSuppliers.Click += new System.EventHandler(this.btFindSuppliers_Click);
             // 
             // ManualAditionForm
             // 
@@ -980,6 +1036,10 @@
         private System.Windows.Forms.Button btFindCustomers;
         private System.Windows.Forms.Button btFindOrders;
         private System.Windows.Forms.Button btFindSuppliers;
+        private System.Windows.Forms.Button btEditProduct;
+        private System.Windows.Forms.Button btEditCustomer;
+        private System.Windows.Forms.Button btEditOrder;
+        private System.Windows.Forms.Button btEditSupplier;
     }
 }
 
