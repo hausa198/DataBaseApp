@@ -19,9 +19,36 @@ namespace DataBaseApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ManualAditionForm maf = new ManualAditionForm(this);
-            Hide();
-            maf.Show();
+            if (tbUsername.Text == "admin" && tbPassword.Text == "1234")
+            {
+                ManualAditionForm maf = new ManualAditionForm(this);
+                Hide();
+                maf.Show();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password!");
+                tbUsername.Clear();
+                tbPassword.Clear();
+                tbUsername.Focus();
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            tbUsername.Clear();
+            tbPassword.Clear();
+            tbUsername.Focus();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            tbPassword.UseSystemPasswordChar = !tbPassword.UseSystemPasswordChar;
         }
     }
 }

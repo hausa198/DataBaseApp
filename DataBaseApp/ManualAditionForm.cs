@@ -187,16 +187,6 @@ namespace DataBaseApp
             ShowTable(MyDataBase, dataGridView1, "suppliers");
         }
 
-        private void ManualAditionForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if(IsManuallyClosed == true)
-            {
-                conDataBase1.Close();
-                mainForm.Close();
-                IsManuallyClosed = false;
-            }
-        }
-
         private void btFindProducts_Click(object sender, EventArgs e)
         {
             MySqlCommand cmdDataBase1 = new MySqlCommand("SELECT Name, Category, Price, QuantityInStock, SupplierID FROM products WHERE ProductID = @ProductID", conDataBase1);
@@ -435,6 +425,8 @@ namespace DataBaseApp
                 MessageBox.Show("Грешка при редактирането на продукта!");
             }
 
+            btRemoveProduct.Enabled = false;
+            btEditProduct.Enabled = false;
             ShowTable(MyDataBase, dataGridView1, "products");
         }
 
@@ -460,6 +452,8 @@ namespace DataBaseApp
                 MessageBox.Show("Грешка при редактирането на клиента!");
             }
 
+            btRemoveCustomer.Enabled = false;
+            btEditCustomer.Enabled = false;
             ShowTable(MyDataBase, dataGridView1, "customers");
         }
 
@@ -485,6 +479,8 @@ namespace DataBaseApp
                 MessageBox.Show("Грешка при редактирането на поръчката!");
             }
 
+            btRemoveOrder.Enabled = false;
+            btEditOrder.Enabled = false;
             ShowTable(MyDataBase, dataGridView1, "orders");
         }
 
@@ -508,6 +504,8 @@ namespace DataBaseApp
                 MessageBox.Show("Грешка при редактирането на доставчика!");
             }
 
+            btRemoveSupplier.Enabled = false;
+            btEditSupplier.Enabled = false;
             ShowTable(MyDataBase, dataGridView1, "suppliers");
         }
 
@@ -576,6 +574,14 @@ namespace DataBaseApp
             DateTime currentDateTime = DateTime.Now;
 
             tb_orders_OrderDate.Text = currentDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+        }
+        private void ManualAditionForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (IsManuallyClosed == true)
+            {
+                conDataBase1.Close();
+                mainForm.Close();
+            }
         }
 
         private void btBack_Click(object sender, EventArgs e)
