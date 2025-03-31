@@ -15,14 +15,14 @@ namespace DataBaseApp
     public partial class ManualAditionForm : Form
     {
         private string MyDataBase { get; set; }
-        private MainForm mainForm;
+        private LogInForm mainForm;
         MySqlConnection conDataBase1 = new MySqlConnection();
 
         private bool IsManuallyClosed = true;
-        public ManualAditionForm(MainForm mf)
+        public ManualAditionForm(LogInForm mf)
         {
             InitializeComponent();
-            MyDataBase = "server=localhost;uid=root;pwd=pakistan;Database=electronics_company";
+            MyDataBase = "server=localhost;uid=root;pwd=1234;Database=electronics_company";
             conDataBase1.ConnectionString = MyDataBase;
             mainForm = mf;
         }

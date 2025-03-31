@@ -5,14 +5,15 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DataBaseApp
 {
-    public partial class MainForm : Form
+    public partial class LogInForm : Form
     {
-        public MainForm()
+        public LogInForm()
         {
             InitializeComponent();
         }
@@ -51,12 +52,12 @@ namespace DataBaseApp
         {
             if(privacyFlag == true)
             {
-                pictureBox4.Image = Image.FromFile(@"../images/password_privacyOFF.png");
+                pictureBox4.Image = Image.FromFile(@"../Debug/images/password_privateOFF.png");
                 privacyFlag = false;
             }
             else
             {
-                pictureBox4.Image = Image.FromFile(@"../images/password_privacyON.png");
+                pictureBox4.Image = Image.FromFile(@"../Debug/images/password_privateON.png");
                 privacyFlag = true;
             }
             tbPassword.UseSystemPasswordChar = !tbPassword.UseSystemPasswordChar;
