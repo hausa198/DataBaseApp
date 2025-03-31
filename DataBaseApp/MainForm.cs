@@ -46,8 +46,19 @@ namespace DataBaseApp
             Application.Exit();
         }
 
+        private bool privacyFlag = true;
         private void pictureBox4_Click(object sender, EventArgs e)
         {
+            if(privacyFlag == true)
+            {
+                pictureBox4.Image = Image.FromFile(@"../images/password_privacyOFF.png");
+                privacyFlag = false;
+            }
+            else
+            {
+                pictureBox4.Image = Image.FromFile(@"../images/password_privacyON.png");
+                privacyFlag = true;
+            }
             tbPassword.UseSystemPasswordChar = !tbPassword.UseSystemPasswordChar;
         }
     }

@@ -22,7 +22,7 @@ namespace DataBaseApp
         public ManualAditionForm(MainForm mf)
         {
             InitializeComponent();
-            MyDataBase = "server=localhost;uid=root;pwd=1234;Database=electronics_company";
+            MyDataBase = "server=localhost;uid=root;pwd=pakistan;Database=electronics_company";
             conDataBase1.ConnectionString = MyDataBase;
             mainForm = mf;
         }

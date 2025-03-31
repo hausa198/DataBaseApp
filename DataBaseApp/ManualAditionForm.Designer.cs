@@ -109,33 +109,35 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 91);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 59);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(999, 828);
+            this.dataGridView1.Size = new System.Drawing.Size(666, 538);
             this.dataGridView1.TabIndex = 0;
             // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.Color.White;
             this.comboBox1.Enabled = false;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(18, 49);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox1.Location = new System.Drawing.Point(12, 28);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(997, 28);
+            this.comboBox1.Size = new System.Drawing.Size(666, 28);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(18, 14);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label1.Location = new System.Drawing.Point(12, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 29);
+            this.label1.Size = new System.Drawing.Size(80, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Таблица";
             // 
@@ -158,198 +160,213 @@
             this.gbProducts.Controls.Add(this.label5);
             this.gbProducts.Controls.Add(this.tb_products_Price);
             this.gbProducts.Enabled = false;
-            this.gbProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.gbProducts.Location = new System.Drawing.Point(1026, 92);
-            this.gbProducts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gbProducts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.gbProducts.Location = new System.Drawing.Point(684, 60);
             this.gbProducts.Name = "gbProducts";
-            this.gbProducts.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbProducts.Size = new System.Drawing.Size(300, 827);
+            this.gbProducts.Size = new System.Drawing.Size(200, 538);
             this.gbProducts.TabIndex = 5;
             this.gbProducts.TabStop = false;
             this.gbProducts.Text = "products";
             // 
             // btEditProduct
             // 
+            this.btEditProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
             this.btEditProduct.Enabled = false;
-            this.btEditProduct.Location = new System.Drawing.Point(8, 731);
-            this.btEditProduct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btEditProduct.FlatAppearance.BorderSize = 0;
+            this.btEditProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btEditProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btEditProduct.ForeColor = System.Drawing.Color.White;
+            this.btEditProduct.Location = new System.Drawing.Point(5, 475);
             this.btEditProduct.Name = "btEditProduct";
-            this.btEditProduct.Size = new System.Drawing.Size(286, 38);
+            this.btEditProduct.Size = new System.Drawing.Size(191, 25);
             this.btEditProduct.TabIndex = 36;
             this.btEditProduct.Text = "Редактиране";
-            this.btEditProduct.UseVisualStyleBackColor = true;
+            this.btEditProduct.UseVisualStyleBackColor = false;
             this.btEditProduct.Click += new System.EventHandler(this.btEditProduct_Click);
             // 
             // btFindProducts
             // 
-            this.btFindProducts.Location = new System.Drawing.Point(8, 112);
-            this.btFindProducts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btFindProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.btFindProducts.FlatAppearance.BorderSize = 0;
+            this.btFindProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btFindProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btFindProducts.ForeColor = System.Drawing.Color.White;
+            this.btFindProducts.Location = new System.Drawing.Point(5, 73);
             this.btFindProducts.Name = "btFindProducts";
-            this.btFindProducts.Size = new System.Drawing.Size(284, 38);
+            this.btFindProducts.Size = new System.Drawing.Size(189, 25);
             this.btFindProducts.TabIndex = 35;
             this.btFindProducts.Text = "Намери";
-            this.btFindProducts.UseVisualStyleBackColor = true;
+            this.btFindProducts.UseVisualStyleBackColor = false;
             this.btFindProducts.Click += new System.EventHandler(this.btFindProducts_Click);
             // 
             // btRemoveProduct
             // 
+            this.btRemoveProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
             this.btRemoveProduct.Enabled = false;
-            this.btRemoveProduct.Location = new System.Drawing.Point(8, 779);
-            this.btRemoveProduct.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btRemoveProduct.FlatAppearance.BorderSize = 0;
+            this.btRemoveProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRemoveProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btRemoveProduct.ForeColor = System.Drawing.Color.White;
+            this.btRemoveProduct.Location = new System.Drawing.Point(5, 506);
             this.btRemoveProduct.Name = "btRemoveProduct";
-            this.btRemoveProduct.Size = new System.Drawing.Size(286, 38);
+            this.btRemoveProduct.Size = new System.Drawing.Size(191, 25);
             this.btRemoveProduct.TabIndex = 32;
             this.btRemoveProduct.Text = "Изтриване";
-            this.btRemoveProduct.UseVisualStyleBackColor = true;
+            this.btRemoveProduct.UseVisualStyleBackColor = false;
             this.btRemoveProduct.Click += new System.EventHandler(this.btRemoveProduct_Click);
             // 
             // cb_products_Category
             // 
+            this.cb_products_Category.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
             this.cb_products_Category.FormattingEnabled = true;
             this.cb_products_Category.Items.AddRange(new object[] {
             "Desktop",
             "Laptop",
             "Server"});
-            this.cb_products_Category.Location = new System.Drawing.Point(14, 270);
-            this.cb_products_Category.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cb_products_Category.Location = new System.Drawing.Point(9, 175);
             this.cb_products_Category.Name = "cb_products_Category";
-            this.cb_products_Category.Size = new System.Drawing.Size(148, 37);
+            this.cb_products_Category.Size = new System.Drawing.Size(100, 28);
             this.cb_products_Category.TabIndex = 30;
             // 
             // btRegistrationProducts
             // 
-            this.btRegistrationProducts.Location = new System.Drawing.Point(8, 683);
-            this.btRegistrationProducts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btRegistrationProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.btRegistrationProducts.FlatAppearance.BorderSize = 0;
+            this.btRegistrationProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRegistrationProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btRegistrationProducts.ForeColor = System.Drawing.Color.White;
+            this.btRegistrationProducts.Location = new System.Drawing.Point(5, 444);
             this.btRegistrationProducts.Name = "btRegistrationProducts";
-            this.btRegistrationProducts.Size = new System.Drawing.Size(284, 38);
+            this.btRegistrationProducts.Size = new System.Drawing.Size(189, 25);
             this.btRegistrationProducts.TabIndex = 6;
             this.btRegistrationProducts.Text = "Записване";
-            this.btRegistrationProducts.UseVisualStyleBackColor = true;
+            this.btRegistrationProducts.UseVisualStyleBackColor = false;
             this.btRegistrationProducts.Click += new System.EventHandler(this.btRegistrationProducts_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(8, 235);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label4.Location = new System.Drawing.Point(5, 153);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 29);
+            this.label4.Size = new System.Drawing.Size(81, 20);
             this.label4.TabIndex = 10;
             this.label4.Text = "Category";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(8, 398);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label6.Location = new System.Drawing.Point(5, 259);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(179, 29);
+            this.label6.Size = new System.Drawing.Size(138, 20);
             this.label6.TabIndex = 8;
             this.label6.Text = "QuantityInStock";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(8, 155);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label3.Location = new System.Drawing.Point(5, 101);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 29);
+            this.label3.Size = new System.Drawing.Size(55, 20);
             this.label3.TabIndex = 8;
             this.label3.Text = "Name";
             // 
             // tb_products_Name
             // 
-            this.tb_products_Name.Location = new System.Drawing.Point(14, 190);
-            this.tb_products_Name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_products_Name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.tb_products_Name.Location = new System.Drawing.Point(9, 123);
             this.tb_products_Name.Name = "tb_products_Name";
-            this.tb_products_Name.Size = new System.Drawing.Size(278, 35);
+            this.tb_products_Name.Size = new System.Drawing.Size(187, 26);
             this.tb_products_Name.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(3, 34);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label2.Location = new System.Drawing.Point(2, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 29);
+            this.label2.Size = new System.Drawing.Size(90, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "ProductID";
             // 
             // tb_products_ProductID
             // 
-            this.tb_products_ProductID.Location = new System.Drawing.Point(9, 69);
-            this.tb_products_ProductID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_products_ProductID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.tb_products_ProductID.Location = new System.Drawing.Point(6, 45);
             this.tb_products_ProductID.Name = "tb_products_ProductID";
-            this.tb_products_ProductID.Size = new System.Drawing.Size(283, 35);
+            this.tb_products_ProductID.Size = new System.Drawing.Size(190, 26);
             this.tb_products_ProductID.TabIndex = 0;
             // 
             // tb_products_QuantityInStock
             // 
-            this.tb_products_QuantityInStock.Location = new System.Drawing.Point(14, 433);
-            this.tb_products_QuantityInStock.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_products_QuantityInStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.tb_products_QuantityInStock.Location = new System.Drawing.Point(9, 281);
             this.tb_products_QuantityInStock.Name = "tb_products_QuantityInStock";
-            this.tb_products_QuantityInStock.Size = new System.Drawing.Size(278, 35);
+            this.tb_products_QuantityInStock.Size = new System.Drawing.Size(187, 26);
             this.tb_products_QuantityInStock.TabIndex = 7;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(8, 478);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label7.Location = new System.Drawing.Point(5, 311);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(127, 29);
+            this.label7.Size = new System.Drawing.Size(94, 20);
             this.label7.TabIndex = 6;
             this.label7.Text = "SupplierID";
             // 
             // tb_products_SupplierID
             // 
-            this.tb_products_SupplierID.Location = new System.Drawing.Point(14, 513);
-            this.tb_products_SupplierID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_products_SupplierID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.tb_products_SupplierID.Location = new System.Drawing.Point(9, 333);
             this.tb_products_SupplierID.Name = "tb_products_SupplierID";
-            this.tb_products_SupplierID.Size = new System.Drawing.Size(278, 35);
+            this.tb_products_SupplierID.Size = new System.Drawing.Size(187, 26);
             this.tb_products_SupplierID.TabIndex = 0;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(8, 315);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label5.Location = new System.Drawing.Point(5, 205);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 29);
+            this.label5.Size = new System.Drawing.Size(49, 20);
             this.label5.TabIndex = 10;
             this.label5.Text = "Price";
             // 
             // tb_products_Price
             // 
-            this.tb_products_Price.Location = new System.Drawing.Point(14, 350);
-            this.tb_products_Price.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_products_Price.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.tb_products_Price.Location = new System.Drawing.Point(9, 227);
             this.tb_products_Price.Name = "tb_products_Price";
-            this.tb_products_Price.Size = new System.Drawing.Size(278, 35);
+            this.tb_products_Price.Size = new System.Drawing.Size(187, 26);
             this.tb_products_Price.TabIndex = 9;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(3, 34);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label8.Location = new System.Drawing.Point(2, 22);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(140, 29);
+            this.label8.Size = new System.Drawing.Size(105, 20);
             this.label8.TabIndex = 10;
             this.label8.Text = "CustomerID";
             // 
             // tb_customers_CustomerID
             // 
-            this.tb_customers_CustomerID.Location = new System.Drawing.Point(9, 68);
-            this.tb_customers_CustomerID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_customers_CustomerID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.tb_customers_CustomerID.Location = new System.Drawing.Point(6, 44);
             this.tb_customers_CustomerID.Name = "tb_customers_CustomerID";
-            this.tb_customers_CustomerID.Size = new System.Drawing.Size(283, 35);
+            this.tb_customers_CustomerID.Size = new System.Drawing.Size(190, 26);
             this.tb_customers_CustomerID.TabIndex = 9;
             // 
             // gbCustomers
@@ -371,155 +388,170 @@
             this.gbCustomers.Controls.Add(this.tb_customers_FirstName);
             this.gbCustomers.Controls.Add(this.tb_customers_Phone);
             this.gbCustomers.Enabled = false;
-            this.gbCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.gbCustomers.Location = new System.Drawing.Point(1335, 94);
-            this.gbCustomers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gbCustomers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.gbCustomers.Location = new System.Drawing.Point(890, 61);
             this.gbCustomers.Name = "gbCustomers";
-            this.gbCustomers.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbCustomers.Size = new System.Drawing.Size(300, 825);
+            this.gbCustomers.Size = new System.Drawing.Size(200, 536);
             this.gbCustomers.TabIndex = 11;
             this.gbCustomers.TabStop = false;
             this.gbCustomers.Text = "customers";
             // 
             // btFindCustomers
             // 
-            this.btFindCustomers.Location = new System.Drawing.Point(9, 110);
-            this.btFindCustomers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btFindCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.btFindCustomers.FlatAppearance.BorderSize = 0;
+            this.btFindCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btFindCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btFindCustomers.ForeColor = System.Drawing.Color.White;
+            this.btFindCustomers.Location = new System.Drawing.Point(6, 71);
             this.btFindCustomers.Name = "btFindCustomers";
-            this.btFindCustomers.Size = new System.Drawing.Size(284, 38);
+            this.btFindCustomers.Size = new System.Drawing.Size(189, 25);
             this.btFindCustomers.TabIndex = 36;
             this.btFindCustomers.Text = "Намери";
-            this.btFindCustomers.UseVisualStyleBackColor = true;
+            this.btFindCustomers.UseVisualStyleBackColor = false;
             this.btFindCustomers.Click += new System.EventHandler(this.btFindCustomers_Click);
             // 
             // btEditCustomer
             // 
+            this.btEditCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
             this.btEditCustomer.Enabled = false;
-            this.btEditCustomer.Location = new System.Drawing.Point(8, 729);
-            this.btEditCustomer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btEditCustomer.FlatAppearance.BorderSize = 0;
+            this.btEditCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btEditCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btEditCustomer.ForeColor = System.Drawing.Color.White;
+            this.btEditCustomer.Location = new System.Drawing.Point(5, 474);
             this.btEditCustomer.Name = "btEditCustomer";
-            this.btEditCustomer.Size = new System.Drawing.Size(286, 38);
+            this.btEditCustomer.Size = new System.Drawing.Size(191, 25);
             this.btEditCustomer.TabIndex = 37;
             this.btEditCustomer.Text = "Редактиране";
-            this.btEditCustomer.UseVisualStyleBackColor = true;
+            this.btEditCustomer.UseVisualStyleBackColor = false;
             this.btEditCustomer.Click += new System.EventHandler(this.btEditCustomer_Click);
             // 
             // btRemoveCustomer
             // 
+            this.btRemoveCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
             this.btRemoveCustomer.Enabled = false;
-            this.btRemoveCustomer.Location = new System.Drawing.Point(8, 777);
-            this.btRemoveCustomer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btRemoveCustomer.FlatAppearance.BorderSize = 0;
+            this.btRemoveCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRemoveCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btRemoveCustomer.ForeColor = System.Drawing.Color.White;
+            this.btRemoveCustomer.Location = new System.Drawing.Point(5, 505);
             this.btRemoveCustomer.Name = "btRemoveCustomer";
-            this.btRemoveCustomer.Size = new System.Drawing.Size(286, 38);
+            this.btRemoveCustomer.Size = new System.Drawing.Size(191, 25);
             this.btRemoveCustomer.TabIndex = 33;
             this.btRemoveCustomer.Text = "Изтриване";
-            this.btRemoveCustomer.UseVisualStyleBackColor = true;
+            this.btRemoveCustomer.UseVisualStyleBackColor = false;
             this.btRemoveCustomer.Click += new System.EventHandler(this.btRemoveCustomer_Click);
             // 
             // btRegistrationCustomers
             // 
-            this.btRegistrationCustomers.Location = new System.Drawing.Point(8, 681);
-            this.btRegistrationCustomers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btRegistrationCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.btRegistrationCustomers.FlatAppearance.BorderSize = 0;
+            this.btRegistrationCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRegistrationCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btRegistrationCustomers.ForeColor = System.Drawing.Color.White;
+            this.btRegistrationCustomers.Location = new System.Drawing.Point(5, 443);
             this.btRegistrationCustomers.Name = "btRegistrationCustomers";
-            this.btRegistrationCustomers.Size = new System.Drawing.Size(286, 38);
+            this.btRegistrationCustomers.Size = new System.Drawing.Size(191, 25);
             this.btRegistrationCustomers.TabIndex = 6;
             this.btRegistrationCustomers.Text = "Записване";
-            this.btRegistrationCustomers.UseVisualStyleBackColor = true;
+            this.btRegistrationCustomers.UseVisualStyleBackColor = false;
             this.btRegistrationCustomers.Click += new System.EventHandler(this.btRegistrationCustomers_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(3, 233);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label10.Location = new System.Drawing.Point(2, 151);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(122, 29);
+            this.label10.Size = new System.Drawing.Size(90, 20);
             this.label10.TabIndex = 6;
             this.label10.Text = "LastName";
             // 
             // tb_customers_LastName
             // 
-            this.tb_customers_LastName.Location = new System.Drawing.Point(9, 269);
-            this.tb_customers_LastName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_customers_LastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.tb_customers_LastName.Location = new System.Drawing.Point(6, 175);
             this.tb_customers_LastName.Name = "tb_customers_LastName";
-            this.tb_customers_LastName.Size = new System.Drawing.Size(283, 35);
+            this.tb_customers_LastName.Size = new System.Drawing.Size(190, 26);
             this.tb_customers_LastName.TabIndex = 0;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(3, 476);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label13.Location = new System.Drawing.Point(2, 309);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(102, 29);
+            this.label13.Size = new System.Drawing.Size(75, 20);
             this.label13.TabIndex = 16;
             this.label13.Text = "Address";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(3, 313);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label11.Location = new System.Drawing.Point(2, 203);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 29);
+            this.label11.Size = new System.Drawing.Size(53, 20);
             this.label11.TabIndex = 12;
             this.label11.Text = "Email";
             // 
             // tb_customers_Address
             // 
-            this.tb_customers_Address.Location = new System.Drawing.Point(9, 512);
-            this.tb_customers_Address.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_customers_Address.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.tb_customers_Address.Location = new System.Drawing.Point(6, 333);
             this.tb_customers_Address.Name = "tb_customers_Address";
-            this.tb_customers_Address.Size = new System.Drawing.Size(283, 35);
+            this.tb_customers_Address.Size = new System.Drawing.Size(190, 26);
             this.tb_customers_Address.TabIndex = 15;
             // 
             // tb_customers_Email
             // 
-            this.tb_customers_Email.Location = new System.Drawing.Point(9, 349);
-            this.tb_customers_Email.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_customers_Email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.tb_customers_Email.Location = new System.Drawing.Point(6, 227);
             this.tb_customers_Email.Name = "tb_customers_Email";
-            this.tb_customers_Email.Size = new System.Drawing.Size(283, 35);
+            this.tb_customers_Email.Size = new System.Drawing.Size(190, 26);
             this.tb_customers_Email.TabIndex = 11;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(3, 153);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label9.Location = new System.Drawing.Point(2, 99);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(125, 29);
+            this.label9.Size = new System.Drawing.Size(91, 20);
             this.label9.TabIndex = 8;
             this.label9.Text = "FirstName";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(3, 396);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label12.Location = new System.Drawing.Point(2, 257);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(83, 29);
+            this.label12.Size = new System.Drawing.Size(60, 20);
             this.label12.TabIndex = 14;
             this.label12.Text = "Phone";
             // 
             // tb_customers_FirstName
             // 
-            this.tb_customers_FirstName.Location = new System.Drawing.Point(9, 189);
-            this.tb_customers_FirstName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_customers_FirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.tb_customers_FirstName.Location = new System.Drawing.Point(6, 123);
             this.tb_customers_FirstName.Name = "tb_customers_FirstName";
-            this.tb_customers_FirstName.Size = new System.Drawing.Size(283, 35);
+            this.tb_customers_FirstName.Size = new System.Drawing.Size(190, 26);
             this.tb_customers_FirstName.TabIndex = 7;
             // 
             // tb_customers_Phone
             // 
-            this.tb_customers_Phone.Location = new System.Drawing.Point(9, 432);
-            this.tb_customers_Phone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_customers_Phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.tb_customers_Phone.Location = new System.Drawing.Point(6, 281);
             this.tb_customers_Phone.Name = "tb_customers_Phone";
-            this.tb_customers_Phone.Size = new System.Drawing.Size(283, 35);
+            this.tb_customers_Phone.Size = new System.Drawing.Size(190, 26);
             this.tb_customers_Phone.TabIndex = 13;
             // 
             // gbOrders
@@ -543,221 +575,239 @@
             this.gbOrders.Controls.Add(this.tb_orders_OrderID);
             this.gbOrders.Controls.Add(this.btRegistrationOrders);
             this.gbOrders.Enabled = false;
-            this.gbOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.gbOrders.Location = new System.Drawing.Point(1644, 95);
-            this.gbOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gbOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.gbOrders.Location = new System.Drawing.Point(1096, 62);
             this.gbOrders.Name = "gbOrders";
-            this.gbOrders.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbOrders.Size = new System.Drawing.Size(300, 824);
+            this.gbOrders.Size = new System.Drawing.Size(200, 536);
             this.gbOrders.TabIndex = 11;
             this.gbOrders.TabStop = false;
             this.gbOrders.Text = "orders";
             // 
             // btFindOrders
             // 
-            this.btFindOrders.Location = new System.Drawing.Point(8, 109);
-            this.btFindOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btFindOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.btFindOrders.FlatAppearance.BorderSize = 0;
+            this.btFindOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btFindOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btFindOrders.ForeColor = System.Drawing.Color.White;
+            this.btFindOrders.Location = new System.Drawing.Point(5, 71);
             this.btFindOrders.Name = "btFindOrders";
-            this.btFindOrders.Size = new System.Drawing.Size(284, 38);
+            this.btFindOrders.Size = new System.Drawing.Size(189, 25);
             this.btFindOrders.TabIndex = 37;
             this.btFindOrders.Text = "Намери";
-            this.btFindOrders.UseVisualStyleBackColor = true;
+            this.btFindOrders.UseVisualStyleBackColor = false;
             this.btFindOrders.Click += new System.EventHandler(this.btFindOrders_Click);
             // 
             // btEditOrder
             // 
+            this.btEditOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
             this.btEditOrder.Enabled = false;
-            this.btEditOrder.Location = new System.Drawing.Point(8, 728);
-            this.btEditOrder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btEditOrder.FlatAppearance.BorderSize = 0;
+            this.btEditOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btEditOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btEditOrder.ForeColor = System.Drawing.Color.White;
+            this.btEditOrder.Location = new System.Drawing.Point(5, 473);
             this.btEditOrder.Name = "btEditOrder";
-            this.btEditOrder.Size = new System.Drawing.Size(286, 38);
+            this.btEditOrder.Size = new System.Drawing.Size(191, 25);
             this.btEditOrder.TabIndex = 38;
             this.btEditOrder.Text = "Редактиране";
-            this.btEditOrder.UseVisualStyleBackColor = true;
+            this.btEditOrder.UseVisualStyleBackColor = false;
             this.btEditOrder.Click += new System.EventHandler(this.btEditOrder_Click);
             // 
             // btRemoveOrder
             // 
+            this.btRemoveOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
             this.btRemoveOrder.Enabled = false;
-            this.btRemoveOrder.Location = new System.Drawing.Point(8, 776);
-            this.btRemoveOrder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btRemoveOrder.FlatAppearance.BorderSize = 0;
+            this.btRemoveOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRemoveOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btRemoveOrder.ForeColor = System.Drawing.Color.White;
+            this.btRemoveOrder.Location = new System.Drawing.Point(5, 504);
             this.btRemoveOrder.Name = "btRemoveOrder";
-            this.btRemoveOrder.Size = new System.Drawing.Size(286, 38);
+            this.btRemoveOrder.Size = new System.Drawing.Size(191, 25);
             this.btRemoveOrder.TabIndex = 34;
             this.btRemoveOrder.Text = "Изтриване";
-            this.btRemoveOrder.UseVisualStyleBackColor = true;
+            this.btRemoveOrder.UseVisualStyleBackColor = false;
             this.btRemoveOrder.Click += new System.EventHandler(this.btRemoveOrder_Click);
             // 
             // btGetCurrentTime
             // 
-            this.btGetCurrentTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btGetCurrentTime.Location = new System.Drawing.Point(69, 510);
-            this.btGetCurrentTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btGetCurrentTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.btGetCurrentTime.FlatAppearance.BorderSize = 0;
+            this.btGetCurrentTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btGetCurrentTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btGetCurrentTime.ForeColor = System.Drawing.Color.White;
+            this.btGetCurrentTime.Location = new System.Drawing.Point(24, 328);
             this.btGetCurrentTime.Name = "btGetCurrentTime";
-            this.btGetCurrentTime.Size = new System.Drawing.Size(150, 55);
+            this.btGetCurrentTime.Size = new System.Drawing.Size(148, 51);
             this.btGetCurrentTime.TabIndex = 31;
             this.btGetCurrentTime.Text = "Сегашното време";
-            this.btGetCurrentTime.UseVisualStyleBackColor = true;
+            this.btGetCurrentTime.UseVisualStyleBackColor = false;
             this.btGetCurrentTime.Click += new System.EventHandler(this.btGetCurrentTime_Click);
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label24.Location = new System.Drawing.Point(46, 475);
-            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label24.Location = new System.Drawing.Point(12, 308);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(206, 20);
+            this.label24.Size = new System.Drawing.Size(182, 16);
             this.label24.TabIndex = 30;
             this.label24.Text = "YYYY-MM-DD HH:MM:SS";
             // 
             // cb_orders_Status
             // 
+            this.cb_orders_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
             this.cb_orders_Status.FormattingEnabled = true;
             this.cb_orders_Status.Items.AddRange(new object[] {
             "Pending",
             "In Progress",
             "Delivered",
             "Cancelled"});
-            this.cb_orders_Status.Location = new System.Drawing.Point(10, 606);
-            this.cb_orders_Status.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cb_orders_Status.Location = new System.Drawing.Point(6, 408);
             this.cb_orders_Status.Name = "cb_orders_Status";
-            this.cb_orders_Status.Size = new System.Drawing.Size(148, 37);
+            this.cb_orders_Status.Size = new System.Drawing.Size(100, 28);
             this.cb_orders_Status.TabIndex = 29;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label19.Location = new System.Drawing.Point(10, 570);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label19.Location = new System.Drawing.Point(6, 384);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(79, 29);
+            this.label19.Size = new System.Drawing.Size(62, 20);
             this.label19.TabIndex = 28;
             this.label19.Text = "Status";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(4, 395);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label18.Location = new System.Drawing.Point(3, 257);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(126, 29);
+            this.label18.Size = new System.Drawing.Size(93, 20);
             this.label18.TabIndex = 26;
             this.label18.Text = "OrderDate";
             // 
             // tb_orders_OrderDate
             // 
-            this.tb_orders_OrderDate.Location = new System.Drawing.Point(10, 430);
-            this.tb_orders_OrderDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_orders_OrderDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.tb_orders_OrderDate.Location = new System.Drawing.Point(7, 279);
             this.tb_orders_OrderDate.Name = "tb_orders_OrderDate";
-            this.tb_orders_OrderDate.Size = new System.Drawing.Size(282, 35);
+            this.tb_orders_OrderDate.Size = new System.Drawing.Size(189, 26);
             this.tb_orders_OrderDate.TabIndex = 25;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(4, 312);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label17.Location = new System.Drawing.Point(3, 203);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(100, 29);
+            this.label17.Size = new System.Drawing.Size(76, 20);
             this.label17.TabIndex = 24;
             this.label17.Text = "Quantity";
             // 
             // tb_orders_Quantity
             // 
-            this.tb_orders_Quantity.Location = new System.Drawing.Point(10, 347);
-            this.tb_orders_Quantity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_orders_Quantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.tb_orders_Quantity.Location = new System.Drawing.Point(7, 226);
             this.tb_orders_Quantity.Name = "tb_orders_Quantity";
-            this.tb_orders_Quantity.Size = new System.Drawing.Size(282, 35);
+            this.tb_orders_Quantity.Size = new System.Drawing.Size(189, 26);
             this.tb_orders_Quantity.TabIndex = 23;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(4, 232);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label16.Location = new System.Drawing.Point(3, 151);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(119, 29);
+            this.label16.Size = new System.Drawing.Size(90, 20);
             this.label16.TabIndex = 22;
             this.label16.Text = "ProductID";
             // 
             // tb_orders_ProductID
             // 
-            this.tb_orders_ProductID.Location = new System.Drawing.Point(10, 267);
-            this.tb_orders_ProductID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_orders_ProductID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.tb_orders_ProductID.Location = new System.Drawing.Point(7, 174);
             this.tb_orders_ProductID.Name = "tb_orders_ProductID";
-            this.tb_orders_ProductID.Size = new System.Drawing.Size(282, 35);
+            this.tb_orders_ProductID.Size = new System.Drawing.Size(189, 26);
             this.tb_orders_ProductID.TabIndex = 21;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.Location = new System.Drawing.Point(4, 152);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label15.Location = new System.Drawing.Point(3, 99);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(140, 29);
+            this.label15.Size = new System.Drawing.Size(105, 20);
             this.label15.TabIndex = 20;
             this.label15.Text = "CustomerID";
             // 
             // tb_orders_CustomerID
             // 
-            this.tb_orders_CustomerID.Location = new System.Drawing.Point(10, 187);
-            this.tb_orders_CustomerID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_orders_CustomerID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.tb_orders_CustomerID.Location = new System.Drawing.Point(7, 122);
             this.tb_orders_CustomerID.Name = "tb_orders_CustomerID";
-            this.tb_orders_CustomerID.Size = new System.Drawing.Size(282, 35);
+            this.tb_orders_CustomerID.Size = new System.Drawing.Size(189, 26);
             this.tb_orders_CustomerID.TabIndex = 19;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(3, 31);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label14.Location = new System.Drawing.Point(2, 20);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(99, 29);
+            this.label14.Size = new System.Drawing.Size(73, 20);
             this.label14.TabIndex = 18;
             this.label14.Text = "OrderID";
             // 
             // tb_orders_OrderID
             // 
-            this.tb_orders_OrderID.Location = new System.Drawing.Point(9, 66);
-            this.tb_orders_OrderID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_orders_OrderID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.tb_orders_OrderID.Location = new System.Drawing.Point(6, 43);
             this.tb_orders_OrderID.Name = "tb_orders_OrderID";
-            this.tb_orders_OrderID.Size = new System.Drawing.Size(282, 35);
+            this.tb_orders_OrderID.Size = new System.Drawing.Size(189, 26);
             this.tb_orders_OrderID.TabIndex = 17;
             // 
             // btRegistrationOrders
             // 
-            this.btRegistrationOrders.Location = new System.Drawing.Point(8, 680);
-            this.btRegistrationOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btRegistrationOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.btRegistrationOrders.FlatAppearance.BorderSize = 0;
+            this.btRegistrationOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRegistrationOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btRegistrationOrders.ForeColor = System.Drawing.Color.White;
+            this.btRegistrationOrders.Location = new System.Drawing.Point(5, 442);
             this.btRegistrationOrders.Name = "btRegistrationOrders";
-            this.btRegistrationOrders.Size = new System.Drawing.Size(286, 38);
+            this.btRegistrationOrders.Size = new System.Drawing.Size(191, 25);
             this.btRegistrationOrders.TabIndex = 6;
             this.btRegistrationOrders.Text = "Записване";
-            this.btRegistrationOrders.UseVisualStyleBackColor = true;
+            this.btRegistrationOrders.UseVisualStyleBackColor = false;
             this.btRegistrationOrders.Click += new System.EventHandler(this.btRegistrationOrders_Click);
             // 
             // tb_suppliers_SupplierID
             // 
-            this.tb_suppliers_SupplierID.Location = new System.Drawing.Point(9, 66);
-            this.tb_suppliers_SupplierID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_suppliers_SupplierID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.tb_suppliers_SupplierID.Location = new System.Drawing.Point(6, 43);
             this.tb_suppliers_SupplierID.Name = "tb_suppliers_SupplierID";
-            this.tb_suppliers_SupplierID.Size = new System.Drawing.Size(283, 35);
+            this.tb_suppliers_SupplierID.Size = new System.Drawing.Size(190, 26);
             this.tb_suppliers_SupplierID.TabIndex = 27;
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(1026, 49);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.radioButton1.Location = new System.Drawing.Point(684, 32);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(164, 33);
+            this.radioButton1.Size = new System.Drawing.Size(120, 24);
             this.radioButton1.TabIndex = 12;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Свързване";
@@ -779,139 +829,154 @@
             this.gbSuppliers.Controls.Add(this.tb_suppliers_ContactEmail);
             this.gbSuppliers.Controls.Add(this.tb_suppliers_Phone);
             this.gbSuppliers.Enabled = false;
-            this.gbSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.gbSuppliers.Location = new System.Drawing.Point(1953, 95);
-            this.gbSuppliers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gbSuppliers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.gbSuppliers.Location = new System.Drawing.Point(1302, 62);
             this.gbSuppliers.Name = "gbSuppliers";
-            this.gbSuppliers.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbSuppliers.Size = new System.Drawing.Size(300, 824);
+            this.gbSuppliers.Size = new System.Drawing.Size(200, 536);
             this.gbSuppliers.TabIndex = 17;
             this.gbSuppliers.TabStop = false;
             this.gbSuppliers.Text = "suppliers";
             // 
             // btRemoveSupplier
             // 
+            this.btRemoveSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
             this.btRemoveSupplier.Enabled = false;
-            this.btRemoveSupplier.Location = new System.Drawing.Point(8, 776);
-            this.btRemoveSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btRemoveSupplier.FlatAppearance.BorderSize = 0;
+            this.btRemoveSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRemoveSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btRemoveSupplier.ForeColor = System.Drawing.Color.White;
+            this.btRemoveSupplier.Location = new System.Drawing.Point(5, 504);
             this.btRemoveSupplier.Name = "btRemoveSupplier";
-            this.btRemoveSupplier.Size = new System.Drawing.Size(286, 38);
+            this.btRemoveSupplier.Size = new System.Drawing.Size(191, 25);
             this.btRemoveSupplier.TabIndex = 35;
             this.btRemoveSupplier.Text = "Изтриване";
-            this.btRemoveSupplier.UseVisualStyleBackColor = true;
+            this.btRemoveSupplier.UseVisualStyleBackColor = false;
             this.btRemoveSupplier.Click += new System.EventHandler(this.btRemoveSupplier_Click);
             // 
             // btEditSupplier
             // 
+            this.btEditSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
             this.btEditSupplier.Enabled = false;
-            this.btEditSupplier.Location = new System.Drawing.Point(8, 728);
-            this.btEditSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btEditSupplier.FlatAppearance.BorderSize = 0;
+            this.btEditSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btEditSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btEditSupplier.ForeColor = System.Drawing.Color.White;
+            this.btEditSupplier.Location = new System.Drawing.Point(5, 473);
             this.btEditSupplier.Name = "btEditSupplier";
-            this.btEditSupplier.Size = new System.Drawing.Size(286, 38);
+            this.btEditSupplier.Size = new System.Drawing.Size(191, 25);
             this.btEditSupplier.TabIndex = 39;
             this.btEditSupplier.Text = "Редактиране";
-            this.btEditSupplier.UseVisualStyleBackColor = true;
+            this.btEditSupplier.UseVisualStyleBackColor = false;
             this.btEditSupplier.Click += new System.EventHandler(this.btEditSupplier_Click);
             // 
             // btFindSuppliers
             // 
-            this.btFindSuppliers.Location = new System.Drawing.Point(9, 109);
-            this.btFindSuppliers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btFindSuppliers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.btFindSuppliers.FlatAppearance.BorderSize = 0;
+            this.btFindSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btFindSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btFindSuppliers.ForeColor = System.Drawing.Color.White;
+            this.btFindSuppliers.Location = new System.Drawing.Point(6, 71);
             this.btFindSuppliers.Name = "btFindSuppliers";
-            this.btFindSuppliers.Size = new System.Drawing.Size(284, 38);
+            this.btFindSuppliers.Size = new System.Drawing.Size(189, 25);
             this.btFindSuppliers.TabIndex = 38;
             this.btFindSuppliers.Text = "Намери";
-            this.btFindSuppliers.UseVisualStyleBackColor = true;
+            this.btFindSuppliers.UseVisualStyleBackColor = false;
             this.btFindSuppliers.Click += new System.EventHandler(this.btFindSuppliers_Click);
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label23.Location = new System.Drawing.Point(3, 309);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label23.Location = new System.Drawing.Point(2, 201);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(83, 29);
+            this.label23.Size = new System.Drawing.Size(60, 20);
             this.label23.TabIndex = 18;
             this.label23.Text = "Phone";
             // 
             // btRegistrationSuppliers
             // 
-            this.btRegistrationSuppliers.Location = new System.Drawing.Point(8, 680);
-            this.btRegistrationSuppliers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btRegistrationSuppliers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.btRegistrationSuppliers.FlatAppearance.BorderSize = 0;
+            this.btRegistrationSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRegistrationSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btRegistrationSuppliers.ForeColor = System.Drawing.Color.White;
+            this.btRegistrationSuppliers.Location = new System.Drawing.Point(5, 442);
             this.btRegistrationSuppliers.Name = "btRegistrationSuppliers";
-            this.btRegistrationSuppliers.Size = new System.Drawing.Size(286, 38);
+            this.btRegistrationSuppliers.Size = new System.Drawing.Size(191, 25);
             this.btRegistrationSuppliers.TabIndex = 6;
             this.btRegistrationSuppliers.Text = "Записване";
-            this.btRegistrationSuppliers.UseVisualStyleBackColor = true;
+            this.btRegistrationSuppliers.UseVisualStyleBackColor = false;
             this.btRegistrationSuppliers.Click += new System.EventHandler(this.btRegistrationSuppliers_Click);
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label20.Location = new System.Drawing.Point(3, 31);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label20.Location = new System.Drawing.Point(2, 20);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(127, 29);
+            this.label20.Size = new System.Drawing.Size(94, 20);
             this.label20.TabIndex = 6;
             this.label20.Text = "SupplierID";
             // 
             // tb_suppliers_Name
             // 
-            this.tb_suppliers_Name.Location = new System.Drawing.Point(9, 184);
-            this.tb_suppliers_Name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_suppliers_Name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.tb_suppliers_Name.Location = new System.Drawing.Point(6, 120);
             this.tb_suppliers_Name.Name = "tb_suppliers_Name";
-            this.tb_suppliers_Name.Size = new System.Drawing.Size(283, 35);
+            this.tb_suppliers_Name.Size = new System.Drawing.Size(190, 26);
             this.tb_suppliers_Name.TabIndex = 0;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label21.Location = new System.Drawing.Point(3, 152);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label21.Location = new System.Drawing.Point(2, 99);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(78, 29);
+            this.label21.Size = new System.Drawing.Size(55, 20);
             this.label21.TabIndex = 12;
             this.label21.Text = "Name";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label22.Location = new System.Drawing.Point(3, 229);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.label22.Location = new System.Drawing.Point(2, 149);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(155, 29);
+            this.label22.Size = new System.Drawing.Size(116, 20);
             this.label22.TabIndex = 16;
             this.label22.Text = "ContactEmail";
             // 
             // tb_suppliers_ContactEmail
             // 
-            this.tb_suppliers_ContactEmail.Location = new System.Drawing.Point(9, 264);
-            this.tb_suppliers_ContactEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_suppliers_ContactEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.tb_suppliers_ContactEmail.Location = new System.Drawing.Point(6, 172);
             this.tb_suppliers_ContactEmail.Name = "tb_suppliers_ContactEmail";
-            this.tb_suppliers_ContactEmail.Size = new System.Drawing.Size(283, 35);
+            this.tb_suppliers_ContactEmail.Size = new System.Drawing.Size(190, 26);
             this.tb_suppliers_ContactEmail.TabIndex = 15;
             // 
             // tb_suppliers_Phone
             // 
-            this.tb_suppliers_Phone.Location = new System.Drawing.Point(9, 344);
-            this.tb_suppliers_Phone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_suppliers_Phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.tb_suppliers_Phone.Location = new System.Drawing.Point(6, 224);
             this.tb_suppliers_Phone.Name = "tb_suppliers_Phone";
-            this.tb_suppliers_Phone.Size = new System.Drawing.Size(283, 35);
+            this.tb_suppliers_Phone.Size = new System.Drawing.Size(190, 26);
             this.tb_suppliers_Phone.TabIndex = 11;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Enabled = false;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(1202, 49);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.radioButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.radioButton2.Location = new System.Drawing.Point(810, 32);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(347, 33);
+            this.radioButton2.Size = new System.Drawing.Size(259, 24);
             this.radioButton2.TabIndex = 18;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Прекратяване на връзката";
@@ -920,12 +985,14 @@
             // 
             // btBack
             // 
-            this.btBack.BackColor = System.Drawing.SystemColors.Control;
+            this.btBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
+            this.btBack.FlatAppearance.BorderSize = 0;
+            this.btBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBack.Location = new System.Drawing.Point(13, 929);
-            this.btBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btBack.ForeColor = System.Drawing.Color.White;
+            this.btBack.Location = new System.Drawing.Point(9, 604);
             this.btBack.Name = "btBack";
-            this.btBack.Size = new System.Drawing.Size(150, 66);
+            this.btBack.Size = new System.Drawing.Size(100, 43);
             this.btBack.TabIndex = 31;
             this.btBack.Text = "Назад";
             this.btBack.UseVisualStyleBackColor = false;
@@ -933,10 +1000,11 @@
             // 
             // ManualAditionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(2278, 1009);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1519, 656);
             this.Controls.Add(this.btBack);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.gbSuppliers);
@@ -947,7 +1015,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ManualAditionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
