@@ -309,100 +309,6 @@ namespace DataBaseApp
             reader.Close();
         }
 
-        private void btRemoveProduct_Click(object sender, EventArgs e)
-        {
-            MySqlCommand cmdDataBase1 = new MySqlCommand("DELETE FROM products WHERE ProductID = @ProductID", conDataBase1);
-            cmdDataBase1.Parameters.AddWithValue("@ProductID", tb_products_ProductID.Text);
-
-            int rowsAffected = cmdDataBase1.ExecuteNonQuery();
-
-            if (rowsAffected > 0)
-            {
-                MessageBox.Show("Успешно изтрихте продукта!");
-
-            }
-            else
-            {
-                MessageBox.Show("Продуктът не беше намерен за изтриване!");
-            }
-
-            ClearProductsGB();
-            btRemoveProduct.Enabled = false;
-            btEditProduct.Enabled = false;
-            ShowTable(MyDataBase, dataGridView1, "products");
-        }
-
-        private void btRemoveCustomer_Click(object sender, EventArgs e)
-        {
-            MySqlCommand cmdDataBase1 = new MySqlCommand("DELETE FROM customers WHERE CustomerID = @CustomerID", conDataBase1);
-            cmdDataBase1.Parameters.AddWithValue("@CustomerID", tb_customers_CustomerID.Text);
-
-            int rowsAffected = cmdDataBase1.ExecuteNonQuery();
-
-            if (rowsAffected > 0)
-            {
-                MessageBox.Show("Успешно изтрихте клиента!");
-
-            }
-            else
-            {
-                MessageBox.Show("Клиентът не беше намерен за изтриване!");
-            }
-
-            ClearCustomersGB();
-            btRemoveCustomer.Enabled = false;
-            btEditCustomer.Enabled = false;
-            ShowTable(MyDataBase, dataGridView1, "customers");
-        }
-
-        private void btRemoveOrder_Click(object sender, EventArgs e)
-        {
-            MySqlCommand cmdDataBase1 = new MySqlCommand("DELETE FROM orders WHERE OrderID = @OrderID", conDataBase1);
-            cmdDataBase1.Parameters.AddWithValue("@OrderID", tb_orders_OrderID.Text);
-
-            int rowsAffected = cmdDataBase1.ExecuteNonQuery();
-
-            if (rowsAffected > 0)
-            {
-                MessageBox.Show("Успешно изтрихте поръчката!");
-
-            }
-            else
-            {
-                MessageBox.Show("Поръчката не беше намерена за изтриване!");
-            }
-
-            ClearOrdersGB();
-            btRemoveOrder.Enabled = false;
-            btEditOrder.Enabled = false;
-            ShowTable(MyDataBase, dataGridView1, "orders");
-        }
-
-        private void btRemoveSupplier_Click(object sender, EventArgs e)
-        {
-            MySqlCommand cmdDataBase1 = new MySqlCommand("DELETE FROM suppliers WHERE SupplierID = @SupplierID", conDataBase1);
-            cmdDataBase1.Parameters.AddWithValue("@SupplierID", tb_suppliers_SupplierID.Text);
-
-            int rowsAffected = cmdDataBase1.ExecuteNonQuery();
-
-            if (rowsAffected > 0)
-            {
-                MessageBox.Show("Успешно изтрихте доставчика!");
-
-            }
-            else
-            {
-                MessageBox.Show("Доставчикът не беше намерен за изтриване!");
-            }
-
-            ClearSuppliersGB();
-            btRemoveSupplier.Enabled = false;
-            btEditSupplier.Enabled = false;
-            ShowTable(MyDataBase, dataGridView1, "suppliers");
-        }
-
-
-
         private void btEditProduct_Click(object sender, EventArgs e)
         {
             MySqlCommand cmdDataBase1 = new MySqlCommand("UPDATE products SET Name = @Name, Category = @Category, Price = @Price, QuantityInStock = @QuantityInStock, SupplierID = @SupplierID WHERE ProductID = @ProductID", conDataBase1);
@@ -509,7 +415,121 @@ namespace DataBaseApp
             ShowTable(MyDataBase, dataGridView1, "suppliers");
         }
 
+        private void btRemoveProduct_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Сигурни ли сте че искате да го изтриете?", "Изтриване", MessageBoxButtons.YesNo);
 
+            if (dialogResult == DialogResult.Yes)
+            {
+                MySqlCommand cmdDataBase1 = new MySqlCommand("DELETE FROM products WHERE ProductID = @ProductID", conDataBase1);
+                cmdDataBase1.Parameters.AddWithValue("@ProductID", tb_products_ProductID.Text);
+
+                int rowsAffected = cmdDataBase1.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Успешно изтрихте продукта!");
+
+                }
+                else
+                {
+                    MessageBox.Show("Продуктът не беше намерен за изтриване!");
+                }
+
+                ClearProductsGB();
+                btRemoveProduct.Enabled = false;
+                btEditProduct.Enabled = false;
+                ShowTable(MyDataBase, dataGridView1, "products");
+            }
+            else if (dialogResult == DialogResult.No) { }
+        }
+
+        private void btRemoveCustomer_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Сигурни ли сте че искате да го изтриете?", "Изтриване", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                MySqlCommand cmdDataBase1 = new MySqlCommand("DELETE FROM customers WHERE CustomerID = @CustomerID", conDataBase1);
+                cmdDataBase1.Parameters.AddWithValue("@CustomerID", tb_customers_CustomerID.Text);
+
+                int rowsAffected = cmdDataBase1.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Успешно изтрихте клиента!");
+
+                }
+                else
+                {
+                    MessageBox.Show("Клиентът не беше намерен за изтриване!");
+                }
+
+                ClearCustomersGB();
+                btRemoveCustomer.Enabled = false;
+                btEditCustomer.Enabled = false;
+                ShowTable(MyDataBase, dataGridView1, "customers");
+            }
+            else if (dialogResult == DialogResult.No) { }
+        }
+
+        private void btRemoveOrder_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Сигурни ли сте че искате да го изтриете?", "Изтриване", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                MySqlCommand cmdDataBase1 = new MySqlCommand("DELETE FROM orders WHERE OrderID = @OrderID", conDataBase1);
+                cmdDataBase1.Parameters.AddWithValue("@OrderID", tb_orders_OrderID.Text);
+
+                int rowsAffected = cmdDataBase1.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Успешно изтрихте поръчката!");
+
+                }
+                else
+                {
+                    MessageBox.Show("Поръчката не беше намерена за изтриване!");
+                }
+
+                ClearOrdersGB();
+                btRemoveOrder.Enabled = false;
+                btEditOrder.Enabled = false;
+                ShowTable(MyDataBase, dataGridView1, "orders");
+            }
+            else if (dialogResult == DialogResult.No) { }
+        }
+
+        private void btRemoveSupplier_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Сигурни ли сте че искате да го изтриете?", "Изтриване", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                MySqlCommand cmdDataBase1 = new MySqlCommand("DELETE FROM suppliers WHERE SupplierID = @SupplierID", conDataBase1);
+                cmdDataBase1.Parameters.AddWithValue("@SupplierID", tb_suppliers_SupplierID.Text);
+
+                int rowsAffected = cmdDataBase1.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Успешно изтрихте доставчика!");
+
+                }
+                else
+                {
+                    MessageBox.Show("Доставчикът не беше намерен за изтриване!");
+                }
+
+                ClearSuppliersGB();
+                btRemoveSupplier.Enabled = false;
+                btEditSupplier.Enabled = false;
+                ShowTable(MyDataBase, dataGridView1, "suppliers");
+            }
+            else if (dialogResult == DialogResult.No) { }
+        }
 
         public void ShowTable(string dataBase, DataGridView dataGridView, string table)
         {
