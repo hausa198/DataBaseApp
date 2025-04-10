@@ -1,6 +1,6 @@
 ﻿namespace DataBaseApp
 {
-    partial class ManualAditionForm
+    partial class ProcessingForm
     {
         /// <summary>
         /// Required designer variable.

@@ -12,21 +12,29 @@ using System.Windows.Forms;
 
 namespace DataBaseApp
 {
-    public partial class ManualAditionForm : Form
+    public partial class ProcessingForm : Form
     {
+        // Declaration of variables
         private string MyDataBase { get; set; }
-        private LogInForm mainForm;
+        private LogInForm loginForm;
         MySqlConnection conDataBase1 = new MySqlConnection();
 
+        // Flag for checking if the form is closed manually
         private bool IsManuallyClosed = true;
-        public ManualAditionForm(LogInForm mf)
+
+        // Constructor for the ProcessingForm
+        public ProcessingForm(LogInForm lf)
         {
             InitializeComponent();
+
+            // Initialization of the connection to the database
             MyDataBase = "server=localhost;uid=root;pwd=1234;Database=electronics_company";
             conDataBase1.ConnectionString = MyDataBase;
-            mainForm = mf;
+
+            loginForm = lf;
         }
 
+        // Event that shows the selected table in DataGridView and enables the corresponding group
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
@@ -80,6 +88,7 @@ namespace DataBaseApp
             }
         }
 
+        // Event that connects to the database and shows the selected table
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             comboBox1.Enabled = true;
@@ -98,6 +107,8 @@ namespace DataBaseApp
                 radioButton2.Enabled = true;
             }
         }
+
+        // Event that disconnects from the database and brings back the default state of the form
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             comboBox1.Enabled = false;
@@ -116,77 +127,110 @@ namespace DataBaseApp
             }
         }
 
+        // <-------------------------->
+        // Methods for adding records
         private void btRegistrationProducts_Click(object sender, EventArgs e)
         {
-            MySqlCommand cmdDataBase1 = new MySqlCommand("insert into products (Name,Category,Price,QuantityInStock,SupplierID) " +
-                "values(@Name,@Category,@Price,@QuantityInStock,@SupplierID)", conDataBase1);
+            try
+            {
+                MySqlCommand cmdDataBase1 = new MySqlCommand("insert into products (Name,Category,Price,QuantityInStock,SupplierID) " +
+                                "values(@Name,@Category,@Price,@QuantityInStock,@SupplierID)", conDataBase1);
 
-            cmdDataBase1.Parameters.AddWithValue("@Name", (tb_products_Name.Text));
-            cmdDataBase1.Parameters.AddWithValue("@Category", (cb_products_Category.SelectedIndex + 1));
-            cmdDataBase1.Parameters.AddWithValue("@Price", (tb_products_Price.Text));
-            cmdDataBase1.Parameters.AddWithValue("@QuantityInStock", (tb_products_QuantityInStock.Text));
-            cmdDataBase1.Parameters.AddWithValue("@SupplierID", (tb_products_SupplierID.Text));
+                cmdDataBase1.Parameters.AddWithValue("@Name", (tb_products_Name.Text));
+                cmdDataBase1.Parameters.AddWithValue("@Category", (cb_products_Category.SelectedIndex + 1));
+                cmdDataBase1.Parameters.AddWithValue("@Price", (tb_products_Price.Text));
+                cmdDataBase1.Parameters.AddWithValue("@QuantityInStock", (tb_products_QuantityInStock.Text));
+                cmdDataBase1.Parameters.AddWithValue("@SupplierID", (tb_products_SupplierID.Text));
 
-            cmdDataBase1.ExecuteNonQuery();
+                cmdDataBase1.ExecuteNonQuery();
 
-            MessageBox.Show("Добавихте Успешно!");
+                MessageBox.Show("Добавихте Успешно!");
 
-            ShowTable(MyDataBase, dataGridView1, "products");
+                ShowTable(MyDataBase, dataGridView1, "products");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Грешка при добавяне на продукта: " + ex.Message);
+            }
         }
 
         private void btRegistrationCustomers_Click(object sender, EventArgs e)
         {
-            MySqlCommand cmdDataBase1 = new MySqlCommand
+            try
+            {
+                MySqlCommand cmdDataBase1 = new MySqlCommand
                 ("insert into customers (FirstName,LastName,Phone,Email,Address) " +
                 "values(@FirstName,@LastName,@Phone,@Email,@Address)", conDataBase1);
 
-            cmdDataBase1.Parameters.AddWithValue("@FirstName", (tb_customers_FirstName.Text));
-            cmdDataBase1.Parameters.AddWithValue("@LastName", (tb_customers_LastName.Text));
-            cmdDataBase1.Parameters.AddWithValue("@Phone", (tb_customers_Phone.Text));
-            cmdDataBase1.Parameters.AddWithValue("@Email", (tb_customers_Email.Text));
-            cmdDataBase1.Parameters.AddWithValue("@Address", (tb_customers_Address.Text));
+                cmdDataBase1.Parameters.AddWithValue("@FirstName", (tb_customers_FirstName.Text));
+                cmdDataBase1.Parameters.AddWithValue("@LastName", (tb_customers_LastName.Text));
+                cmdDataBase1.Parameters.AddWithValue("@Phone", (tb_customers_Phone.Text));
+                cmdDataBase1.Parameters.AddWithValue("@Email", (tb_customers_Email.Text));
+                cmdDataBase1.Parameters.AddWithValue("@Address", (tb_customers_Address.Text));
 
-            cmdDataBase1.ExecuteNonQuery();
+                cmdDataBase1.ExecuteNonQuery();
 
-            MessageBox.Show("Добавихте Успешно!");
+                MessageBox.Show("Добавихте Успешно!");
 
-            ShowTable(MyDataBase, dataGridView1, "customers");
+                ShowTable(MyDataBase, dataGridView1, "customers");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Грешка при добавяне на клиента: " + ex.Message);
+            }
         }
 
         private void btRegistrationOrders_Click(object sender, EventArgs e)
         {
-            MySqlCommand cmdDataBase1 = new MySqlCommand("insert into orders (CustomerID,ProductID,Quantity,OrderDate,Status) " +
+            try
+            {
+                MySqlCommand cmdDataBase1 = new MySqlCommand("insert into orders (CustomerID,ProductID,Quantity,OrderDate,Status) " +
                 "values(@CustomerID,@ProductID,@Quantity,@OrderDate,@Status)", conDataBase1);
 
-            cmdDataBase1.Parameters.AddWithValue("@CustomerID", (tb_orders_CustomerID.Text));
-            cmdDataBase1.Parameters.AddWithValue("@ProductID", (tb_orders_ProductID.Text));
-            cmdDataBase1.Parameters.AddWithValue("@Quantity", (tb_orders_Quantity.Text));
-            cmdDataBase1.Parameters.AddWithValue("@OrderDate", (tb_orders_OrderDate.Text));
-            cmdDataBase1.Parameters.AddWithValue("@Status", (cb_orders_Status.SelectedIndex + 1));
+                cmdDataBase1.Parameters.AddWithValue("@CustomerID", (tb_orders_CustomerID.Text));
+                cmdDataBase1.Parameters.AddWithValue("@ProductID", (tb_orders_ProductID.Text));
+                cmdDataBase1.Parameters.AddWithValue("@Quantity", (tb_orders_Quantity.Text));
+                cmdDataBase1.Parameters.AddWithValue("@OrderDate", (tb_orders_OrderDate.Text));
+                cmdDataBase1.Parameters.AddWithValue("@Status", (cb_orders_Status.SelectedIndex + 1));
 
-            cmdDataBase1.ExecuteNonQuery();
+                cmdDataBase1.ExecuteNonQuery();
 
-            MessageBox.Show("Добавихте Успешно!");
+                MessageBox.Show("Добавихте Успешно!");
 
-            ShowTable(MyDataBase, dataGridView1, "orders");
+                ShowTable(MyDataBase, dataGridView1, "orders");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Грешка при добавяне на поръчката: " + ex.Message);
+            }
         }
 
         private void btRegistrationSuppliers_Click(object sender, EventArgs e)
         {
-            MySqlCommand cmdDataBase1 = new MySqlCommand("insert into suppliers (Name,ContactEmail,Phone) " +
+            try
+            {
+                MySqlCommand cmdDataBase1 = new MySqlCommand("insert into suppliers (Name,ContactEmail,Phone) " +
                 "values(@Name,@ContactEmail,@Phone)", conDataBase1);
 
-            cmdDataBase1.Parameters.AddWithValue("@Name", (tb_suppliers_Name.Text));
-            cmdDataBase1.Parameters.AddWithValue("@ContactEmail", (tb_suppliers_ContactEmail.Text));
-            cmdDataBase1.Parameters.AddWithValue("@Phone", (tb_suppliers_Phone.Text));
+                cmdDataBase1.Parameters.AddWithValue("@Name", (tb_suppliers_Name.Text));
+                cmdDataBase1.Parameters.AddWithValue("@ContactEmail", (tb_suppliers_ContactEmail.Text));
+                cmdDataBase1.Parameters.AddWithValue("@Phone", (tb_suppliers_Phone.Text));
 
-            cmdDataBase1.ExecuteNonQuery();
+                cmdDataBase1.ExecuteNonQuery();
 
-            MessageBox.Show("Добавихте Успешно!");
+                MessageBox.Show("Добавихте Успешно!");
 
-            ShowTable(MyDataBase, dataGridView1, "suppliers");
+                ShowTable(MyDataBase, dataGridView1, "suppliers");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Грешка при добавяне на доставчика: " + ex.Message);
+            }
         }
+        // <-------------------------->
 
+        // <-------------------------->
+        // Methods for finding records
         private void btFindProducts_Click(object sender, EventArgs e)
         {
             MySqlCommand cmdDataBase1 = new MySqlCommand("SELECT Name, Category, Price, QuantityInStock, SupplierID FROM products WHERE ProductID = @ProductID", conDataBase1);
@@ -308,7 +352,10 @@ namespace DataBaseApp
 
             reader.Close();
         }
+        // <-------------------------->
 
+        // <-------------------------->
+        // Methods for editing records
         private void btEditProduct_Click(object sender, EventArgs e)
         {
             MySqlCommand cmdDataBase1 = new MySqlCommand("UPDATE products SET Name = @Name, Category = @Category, Price = @Price, QuantityInStock = @QuantityInStock, SupplierID = @SupplierID WHERE ProductID = @ProductID", conDataBase1);
@@ -414,7 +461,10 @@ namespace DataBaseApp
             btEditSupplier.Enabled = false;
             ShowTable(MyDataBase, dataGridView1, "suppliers");
         }
+        // <-------------------------->
 
+        // <-------------------------->
+        // Methods for removing records
         private void btRemoveProduct_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Сигурни ли сте че искате да го изтриете?", "Изтриване", MessageBoxButtons.YesNo);
@@ -530,7 +580,9 @@ namespace DataBaseApp
             }
             else if (dialogResult == DialogResult.No) { }
         }
+        // <-------------------------->
 
+        // Method for showing the selected table in DataGridView
         public void ShowTable(string dataBase, DataGridView dataGridView, string table)
         {
             MySqlConnection conDataBase = new MySqlConnection(dataBase);
@@ -551,6 +603,8 @@ namespace DataBaseApp
             conDataBase.Close();
         }
 
+        // <-------------------------->
+        // Methods for clearing the group boxes
         private void ClearProductsGB()
         {
             tb_products_ProductID.Clear();
@@ -588,28 +642,33 @@ namespace DataBaseApp
             tb_suppliers_ContactEmail.Clear();
             tb_suppliers_Phone.Clear();
         }
+        // <-------------------------->
 
+        // Method for getting the current date and time
         private void btGetCurrentTime_Click(object sender, EventArgs e)
         {
             DateTime currentDateTime = DateTime.Now;
 
             tb_orders_OrderDate.Text = currentDateTime.ToString("yyyy-MM-dd HH:mm:ss");
         }
+
+        // Event which checks if the form is closed manually
         private void ManualAditionForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (IsManuallyClosed == true)
             {
                 conDataBase1.Close();
-                mainForm.Close();
+                loginForm.Close();
             }
         }
 
+        // Event for closing the form and returning to the login form
         private void btBack_Click(object sender, EventArgs e)
         {
             IsManuallyClosed = false;
             conDataBase1.Close();
             this.Close();
-            mainForm.Show();
+            loginForm.Show();
             IsManuallyClosed = true;
         }
     }
