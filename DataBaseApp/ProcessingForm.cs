@@ -32,6 +32,21 @@ namespace DataBaseApp
             conDataBase1.ConnectionString = MyDataBase;
 
             loginForm = lf;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Успешно добавяне!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Грешка: " + ex.Message);
+            }
+
+
+
+
+
         }
 
         // Event that shows the selected table in DataGridView and enables the corresponding group
@@ -131,6 +146,12 @@ namespace DataBaseApp
         // Methods for adding records
         private void btRegistrationProducts_Click(object sender, EventArgs e)
         {
+            if (Decimal.Parse(tb_products_Price.Text) < 0 || int.Parse(tb_products_QuantityInStock.Text) < 0)
+            {
+                MessageBox.Show("Цената и количеството не могат да бъдат отрицателни!");
+                return;
+            }
+
             try
             {
                 MySqlCommand cmdDataBase1 = new MySqlCommand("insert into products (Name,Category,Price,QuantityInStock,SupplierID) " +
@@ -184,26 +205,49 @@ namespace DataBaseApp
         {
             try
             {
-                MySqlCommand cmdDataBase1 = new MySqlCommand("insert into orders (CustomerID,ProductID,Quantity,OrderDate,Status) " +
-                "values(@CustomerID,@ProductID,@Quantity,@OrderDate,@Status)", conDataBase1);
+                int productId = int.Parse(tb_orders_ProductID.Text);
+                int quantityOrdered = int.Parse(tb_orders_Quantity.Text);
 
-                cmdDataBase1.Parameters.AddWithValue("@CustomerID", (tb_orders_CustomerID.Text));
-                cmdDataBase1.Parameters.AddWithValue("@ProductID", (tb_orders_ProductID.Text));
-                cmdDataBase1.Parameters.AddWithValue("@Quantity", (tb_orders_Quantity.Text));
-                cmdDataBase1.Parameters.AddWithValue("@OrderDate", (tb_orders_OrderDate.Text));
-                cmdDataBase1.Parameters.AddWithValue("@Status", (cb_orders_Status.SelectedIndex + 1));
+                MySqlCommand checkStock = new MySqlCommand(
+                    "SELECT QuantityInStock FROM products WHERE ProductID = @ProductID", conDataBase1);
+                checkStock.Parameters.AddWithValue("@ProductID", productId);
 
-                cmdDataBase1.ExecuteNonQuery();
+                int currentStock = Convert.ToInt32(checkStock.ExecuteScalar());
 
-                MessageBox.Show("Добавихте Успешно!");
+                if (currentStock < quantityOrdered)
+                {
+                    MessageBox.Show("Няма достатъчно наличност от този продукт!");
+                    return;
+                }
 
+                MySqlCommand cmdInsert = new MySqlCommand(
+                    "INSERT INTO orders (CustomerID, ProductID, Quantity, OrderDate, Status) " +
+                    "VALUES (@CustomerID, @ProductID, @Quantity, @OrderDate, @Status)", conDataBase1);
+
+                cmdInsert.Parameters.AddWithValue("@CustomerID", tb_orders_CustomerID.Text);
+                cmdInsert.Parameters.AddWithValue("@ProductID", productId);
+                cmdInsert.Parameters.AddWithValue("@Quantity", quantityOrdered);
+                cmdInsert.Parameters.AddWithValue("@OrderDate", tb_orders_OrderDate.Text);
+                cmdInsert.Parameters.AddWithValue("@Status", cb_orders_Status.SelectedIndex + 1);
+
+                cmdInsert.ExecuteNonQuery();
+
+                MySqlCommand updateStock = new MySqlCommand(
+                    "UPDATE products SET QuantityInStock = QuantityInStock - @Qty WHERE ProductID = @ProductID", conDataBase1);
+                updateStock.Parameters.AddWithValue("@Qty", quantityOrdered);
+                updateStock.Parameters.AddWithValue("@ProductID", productId);
+
+                updateStock.ExecuteNonQuery();
+
+                MessageBox.Show("Поръчката беше добавена успешно и количеството е обновено!");
                 ShowTable(MyDataBase, dataGridView1, "orders");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Грешка при добавяне на поръчката: " + ex.Message);
             }
         }
+
 
         private void btRegistrationSuppliers_Click(object sender, EventArgs e)
         {
@@ -305,7 +349,10 @@ namespace DataBaseApp
                 tb_orders_CustomerID.Text = reader["CustomerID"].ToString();
                 tb_orders_ProductID.Text = reader["ProductID"].ToString();
                 tb_orders_Quantity.Text = reader["Quantity"].ToString();
-                tb_orders_OrderDate.Text = reader["OrderDate"].ToString();
+
+                DateTime orderDate = Convert.ToDateTime(reader["OrderDate"]);
+                tb_orders_OrderDate.Text = orderDate.ToString("yyyy-MM-dd HH:mm:ss");
+
                 cb_orders_Status.Text = reader["Status"].ToString();
 
                 MessageBox.Show("Поръчката е намерена!");
@@ -358,6 +405,12 @@ namespace DataBaseApp
         // Methods for editing records
         private void btEditProduct_Click(object sender, EventArgs e)
         {
+            if(Decimal.Parse(tb_products_Price.Text) < 0 || int.Parse(tb_products_QuantityInStock.Text) < 0)
+            {
+                MessageBox.Show("Цената и количеството не могат да бъдат отрицателни!");
+                return;
+            }
+
             MySqlCommand cmdDataBase1 = new MySqlCommand("UPDATE products SET Name = @Name, Category = @Category, Price = @Price, QuantityInStock = @QuantityInStock, SupplierID = @SupplierID WHERE ProductID = @ProductID", conDataBase1);
 
             cmdDataBase1.Parameters.AddWithValue("@ProductID", tb_products_ProductID.Text);
@@ -412,29 +465,61 @@ namespace DataBaseApp
 
         private void btEditOrder_Click(object sender, EventArgs e)
         {
-            MySqlCommand cmdDataBase1 = new MySqlCommand("UPDATE orders SET CustomerID = @CustomerID, ProductID = @ProductID, Quantity = @Quantity, OrderDate = @OrderDate, Status = @Status WHERE OrderID = @OrderID", conDataBase1);
-
-            cmdDataBase1.Parameters.AddWithValue("@OrderID", tb_orders_OrderID.Text);
-            cmdDataBase1.Parameters.AddWithValue("@CustomerID", tb_orders_CustomerID.Text);
-            cmdDataBase1.Parameters.AddWithValue("@ProductID", tb_orders_ProductID.Text);
-            cmdDataBase1.Parameters.AddWithValue("@Quantity", tb_orders_Quantity.Text);
-            cmdDataBase1.Parameters.AddWithValue("@OrderDate", tb_orders_OrderDate.Text);
-            cmdDataBase1.Parameters.AddWithValue("@Status", cb_orders_Status.SelectedIndex + 1);
-
-            int rowsAffected = cmdDataBase1.ExecuteNonQuery();
-
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("Поръчката беше успешно редактирана!");
+                int orderId = int.Parse(tb_orders_OrderID.Text);
+                int newQty = int.Parse(tb_orders_Quantity.Text);
+                int productId = int.Parse(tb_orders_ProductID.Text);
+
+                MySqlCommand getOldQtyCmd = new MySqlCommand(
+                    "SELECT Quantity FROM orders WHERE OrderID = @OrderID", conDataBase1);
+                getOldQtyCmd.Parameters.AddWithValue("@OrderID", orderId);
+
+                int oldQty = Convert.ToInt32(getOldQtyCmd.ExecuteScalar());
+                int qtyDifference = newQty - oldQty;
+
+                MySqlCommand getStockCmd = new MySqlCommand(
+                    "SELECT QuantityInStock FROM products WHERE ProductID = @ProductID", conDataBase1);
+                getStockCmd.Parameters.AddWithValue("@ProductID", productId);
+
+                int stock = Convert.ToInt32(getStockCmd.ExecuteScalar());
+
+                if (qtyDifference > stock)
+                {
+                    MessageBox.Show("Недостатъчна наличност за редактиране на поръчката!");
+                    return;
+                }
+
+                MySqlCommand updateOrder = new MySqlCommand(
+                    "UPDATE orders SET CustomerID = @CustomerID, ProductID = @ProductID, Quantity = @Quantity, " +
+                    "OrderDate = @OrderDate, Status = @Status WHERE OrderID = @OrderID", conDataBase1);
+
+                updateOrder.Parameters.AddWithValue("@OrderID", orderId);
+                updateOrder.Parameters.AddWithValue("@CustomerID", tb_orders_CustomerID.Text);
+                updateOrder.Parameters.AddWithValue("@ProductID", productId);
+                updateOrder.Parameters.AddWithValue("@Quantity", newQty);
+                updateOrder.Parameters.AddWithValue("@OrderDate", tb_orders_OrderDate.Text);
+                updateOrder.Parameters.AddWithValue("@Status", cb_orders_Status.SelectedIndex + 1);
+
+                updateOrder.ExecuteNonQuery();
+
+                MySqlCommand updateStock = new MySqlCommand(
+                    "UPDATE products SET QuantityInStock = QuantityInStock - @Diff WHERE ProductID = @ProductID", conDataBase1);
+                updateStock.Parameters.AddWithValue("@Diff", qtyDifference);
+                updateStock.Parameters.AddWithValue("@ProductID", productId);
+
+                updateStock.ExecuteNonQuery();
+
+                MessageBox.Show("Поръчката беше успешно редактирана и количеството е актуализирано!");
+                ShowTable(MyDataBase, dataGridView1, "orders");
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Грешка при редактирането на поръчката!");
+                MessageBox.Show("Грешка при редактиране на поръчката: " + ex.Message);
             }
 
             btRemoveOrder.Enabled = false;
             btEditOrder.Enabled = false;
-            ShowTable(MyDataBase, dataGridView1, "orders");
         }
 
         private void btEditSupplier_Click(object sender, EventArgs e)
@@ -529,27 +614,63 @@ namespace DataBaseApp
 
             if (dialogResult == DialogResult.Yes)
             {
-                MySqlCommand cmdDataBase1 = new MySqlCommand("DELETE FROM orders WHERE OrderID = @OrderID", conDataBase1);
-                cmdDataBase1.Parameters.AddWithValue("@OrderID", tb_orders_OrderID.Text);
-
-                int rowsAffected = cmdDataBase1.ExecuteNonQuery();
-
-                if (rowsAffected > 0)
+                try
                 {
-                    MessageBox.Show("Успешно изтрихте поръчката!");
+                    int orderId = int.Parse(tb_orders_OrderID.Text);
 
+                    MySqlCommand getOrderDetails = new MySqlCommand(
+                        "SELECT ProductID, Quantity FROM orders WHERE OrderID = @OrderID", conDataBase1);
+                    getOrderDetails.Parameters.AddWithValue("@OrderID", orderId);
+
+                    MySqlDataReader reader = getOrderDetails.ExecuteReader();
+
+                    int productId = -1;
+                    int quantityToRestore = 0;
+
+                    if (reader.Read())
+                    {
+                        productId = Convert.ToInt32(reader["ProductID"]);
+                        quantityToRestore = Convert.ToInt32(reader["Quantity"]);
+                    }
+                    else
+                    {
+                        reader.Close();
+                        MessageBox.Show("Поръчката не беше намерена за изтриване!");
+                        return;
+                    }
+
+                    reader.Close();
+
+                    MySqlCommand restoreQuantity = new MySqlCommand(
+                        "UPDATE products SET QuantityInStock = QuantityInStock + @Qty WHERE ProductID = @ProductID", conDataBase1);
+                    restoreQuantity.Parameters.AddWithValue("@Qty", quantityToRestore);
+                    restoreQuantity.Parameters.AddWithValue("@ProductID", productId);
+                    restoreQuantity.ExecuteNonQuery();
+
+                    MySqlCommand deleteOrder = new MySqlCommand("DELETE FROM orders WHERE OrderID = @OrderID", conDataBase1);
+                    deleteOrder.Parameters.AddWithValue("@OrderID", orderId);
+
+                    int rowsAffected = deleteOrder.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Успешно изтрихте поръчката и възстановихте количеството на продукта!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Поръчката не беше намерена за изтриване!");
+                    }
+
+                    ClearOrdersGB();
+                    btRemoveOrder.Enabled = false;
+                    btEditOrder.Enabled = false;
+                    ShowTable(MyDataBase, dataGridView1, "orders");
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Поръчката не беше намерена за изтриване!");
+                    MessageBox.Show("Грешка при изтриване на поръчката: " + ex.Message);
                 }
-
-                ClearOrdersGB();
-                btRemoveOrder.Enabled = false;
-                btEditOrder.Enabled = false;
-                ShowTable(MyDataBase, dataGridView1, "orders");
             }
-            else if (dialogResult == DialogResult.No) { }
         }
 
         private void btRemoveSupplier_Click(object sender, EventArgs e)

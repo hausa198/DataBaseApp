@@ -226,6 +226,7 @@
             // 
             // cb_products_Category
             // 
+            this.cb_products_Category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_products_Category.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
             this.cb_products_Category.FormattingEnabled = true;
             this.cb_products_Category.Items.AddRange(new object[] {
@@ -705,6 +706,7 @@
             // 
             // cb_orders_Status
             // 
+            this.cb_orders_Status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_orders_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(67)))), ((int)(((byte)(252)))));
             this.cb_orders_Status.FormattingEnabled = true;
             this.cb_orders_Status.Items.AddRange(new object[] {
@@ -1074,7 +1076,7 @@
             this.btBack.UseVisualStyleBackColor = false;
             this.btBack.Click += new System.EventHandler(this.btBack_Click);
             // 
-            // ManualAditionForm
+            // ProcessingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1092,7 +1094,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "ManualAditionForm";
+            this.Name = "ProcessingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ManualAditionForm_FormClosed);
